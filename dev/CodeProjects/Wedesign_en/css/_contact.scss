@@ -1,0 +1,191 @@
+$section_title_color: $color_11;
+$section_content_color: $color_11;
+
+.contact-us {
+   text-align: center;
+   padding: 40px 0;
+
+
+   .contact-us-title {
+      
+      text-align: left;
+
+      h3 {
+         font-family: 'Raleway', sans-serif;
+         font-weight: 700;  
+         font-size: 22px;
+         margin-bottom: 8px;
+         color: $section_title_color;
+         text-transform: uppercase
+      }
+
+      hr {
+         margin: 0;
+      }
+   }
+
+   .contact-form {
+
+      input {
+         height: 52px;
+         font-family: 'Lato', sans-serif;
+      }
+
+      input[type="submit"] {
+         font-weight: 700;
+         background-color: $color_13;
+         color: #FFF;
+         text-transform: uppercase;
+         border: none;
+         box-shadow: none;
+         width: 100%;
+         cursor: pointer;
+
+         &:hover {
+            background-color: $color_11;
+         }
+      }
+
+      textarea {
+         height: 120px;
+         resize: none;
+      }
+   }
+
+   
+
+}
+
+
+
+
+/* **********************************************************************************************
+***********************************   MEDIA QUERIES   ******************************************* 
+********************************************************************************************** */
+
+
+
+
+// Small Screens ****************************************************************************
+/* max-width 640px *********************************************************************/
+
+@media only screen and (max-width: 40em) {
+    
+    .contact-us {
+        padding: 40px;
+    }
+
+   .contact-form{
+      margin-top: 30px;
+   }
+   
+}   
+// End of small Screens
+   
+   
+   
+// Medium Screens ***************************************************************************
+/* min-width 641px and max-width 1023px ************************************************/
+
+@media only screen and (min-width: 40.063em) and (max-width: 63.938em) {
+   
+   .contact-us {
+        padding:40px;
+      .contact-us-title {
+         padding: 40px 0;
+   
+         h3 {
+            font-size: 24px;
+         }
+      }
+
+      .contact-form{
+         
+         input {
+            height: 52px;
+         }
+   
+
+      }
+
+      
+   }
+
+}
+
+// End of Medium Screens
+   
+   
+   
+   
+// Large Screens ****************************************************************************
+/* min-width 1024px and max-width 1440px ***********************************************/
+
+@media only screen and (min-width: 64em) and (max-width: 90em) { 
+   
+   .contact-us {
+      
+
+      .contact-us-title {
+         padding: 40px 0;
+   
+         h3 {
+            font-size: 26px;
+         }
+      }
+
+      .contact-form{
+         
+         input {
+            height: 52px;
+         }
+   
+
+
+         .form-part2 {
+            padding-left: 10px;
+         }
+      }
+
+     
+   }
+
+   
+}
+
+// End of Large Screens
+   
+   
+   
+// Extra Large Screens **********************************************************************
+/* min-width 1441px ********************************************************************/
+
+@media only screen and (min-width: 90.063em) {
+   
+   .contact-us {
+      
+      .contact-us-title {
+         padding: 40px 0;
+   
+         h3 {
+            font-size: 28px;
+         }
+      }
+
+      .contact-form{
+         
+         input {
+            height: 52px;
+         }
+
+
+         .form-part2 {
+            padding-left: 10px;
+         }
+      }
+
+   }
+         
+}
+
+// End of Extra Large Screens

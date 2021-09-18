@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="loop-for";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>For and For/In Loops</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <header>
+                <div class="logo-area">
+                    <img src="img/logo_js.png" alt="logo javascript">
+                </div>
+                <div class="course-title">
+                    <h1>Javascript Course for Beginners</h1>
+                    <h2>Instructor: Ivan Lourenço Gomes</h2>
+                </div>
+            </header>
+
+            <main>
+                <h3>For and For/In Loops</h3>
+                
+                <p>
+                    Loops are structures of repetition. If we want to repeat a statement five times, we don't have to write it five times,
+                    we just need to run a loop.
+                </p>
+
+                <p>
+                    We can also use loops to run through the elements of an array. No matter the size of the array, 
+                    we just need to write the statements once. 
+                </p>
+
+                <h4>For loop</h4>
+
+                <pre>
+                    <code class="javascript">
+    for (var a = 0; a < 5 ; a+=1) {
+        console.log(a);
+    } 
+
+    /* The console will show:
+
+    0
+    1
+    2
+    3
+    4
+
+    */
+                    </code>
+                </pre>
+
+                <p>
+                    Note that we just used three statements separated by semicolon to start the loop. The between curly braces we wrote the code 
+                    to be executed at each iteration of the loop. 
+                </p>
+
+                <p>
+                    Let's understand those three statements inside parenthesis:
+                </p>
+
+                <ul>
+               
+                    <li>
+                        <strong>var a = 0</strong>: The first statement is executed one time before the loops starts.
+                        In this case we start a variable and assign zero to it.
+                    </li>
+                    <br>
+                    <li>
+                        <strong>a < 5</strong>: The second statement is a condition that need to return true so the loop continues to be executed.
+                        When the condition return false, the loop will stop running.
+                    </li>
+                    <br>
+                    <li>
+                        <strong>a+=1</strong>: The third statement is executed at the end of each iteration. In this case we use it to increment the value 
+                        of the variable on each iteration. This prevents our loop from running forever and killing the browser.
+                    </li>
+
+                </ul>
+
+                <h5>Using the loop to run through the elements of an array</h5>
+                
+                <p>The run throught the elements of an array we'll use its length in the condition:</p>
+
+                <pre>
+                    <code class="javascript">
+    var students = ['Peter', 'Mary', 'Joseph', 'John', 'Charles'];
+
+    for (var a = 0; a < students.length ; a++) {
+        console.log(students[a]);
+    }
+
+    /* The console will show:
+
+    Peter
+    Mary
+    Joseph
+    John
+    Charles
+
+    */
+                    </code>
+                </pre>
+
+
+               
+
+                <h4>For/In Loop</h4>
+
+                <p>The for/in loop comes handy when we need to run through objects, since this kind of data type doesn't have the length property.
+                </p>
+
+                <p>
+                    O funcionamento dele é bem simples. Consideremos um objeto de alunos, cujas chaves são as matrículas e os valores são os nomes dos alunos.
+                </p>
+
+                <p>
+                    To initialize this loop we just need to create a variable that will represent each of the objects's properties at each iteration.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    var car = {
+        'Year': 2018,
+        'Model': 'Evoke',
+        'Manufacturer': 'Land Rover',
+        'FuelType': 'Diesel'
+
+    }
+
+    for (var prop in car) {
+        console.log( prop + ': ' + car[prop] );
+    }
+
+    /* The console will show:
+
+    Year: 2018
+    Model: Evoke
+    Manufacturer: Land Rover
+    FuelType: Diesel
+
+    */
+                    </code>
+                </pre>
+
+
+
+               <br>
+
+               
+                <h4>
+                    Loops and the getElementBy methods...
+                </h4>
+
+                <p>
+                    Now that we know how loops work, let's change the css of all elements of our page that share a specific class.
+                </p>
+
+                <pre>
+                    <code class="html">
+
+    &lt;div class="example"&gt;Element 1&lt;/div&gt;
+    &lt;div class="example"&gt;Element 2&lt;/div&gt;
+    &lt;div class="example"&gt;Element 3&lt;/div&gt;
+
+                    </code>
+                </pre>
+
+                <div class="example">Element 1</div>
+                <div class="example">Element 2</div>
+                <div class="example">Element 3</div>
+                <div class="example">Element 4</div>
+                <div class="example">Element 5</div>
+                <div class="example">Element 6</div>
+                <div class="example">Element 7</div>
+                
+
+                <pre>
+                    <code class="javascript">
+                        
+    var elements = document.getElementsByClassName("example");   
+
+    for (var a = 0; a < elements.length ; a+=1) {
+        elements[a].style.color = "orange";
+        elements[a].style['font-weight'] = "bold";
+    }
+                    </code>
+                </pre>
+
+                <p>
+                    The incremental operator can also be written like: a++. 
+                </p>
+                
+                <pre>
+                    <code class="javascript">
+                        
+    var elements = document.getElementsByClassName("example");   
+
+    for (var a = 0; a < elements.length ; a++) {
+        elements[a].style.color = "orange";
+        elements[a].style['font-weight'] = "bold";
+    }
+                    </code>
+                </pre>
+
+
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>

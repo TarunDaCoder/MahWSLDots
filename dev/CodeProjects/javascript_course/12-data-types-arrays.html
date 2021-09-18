@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="tipos_arrays";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Data Types - Arrays</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+
+    <body>
+
+       <div class="page-container">
+           <header>
+               <div class="logo-area">
+                   <img src="img/logo_js.png" alt="logo javascript">
+               </div>
+               <div class="course-title">
+                   <h1>Javascript Course for Beginners</h1>
+                   <h2>Instructor: Ivan Lourenço Gomes</h2>
+               </div>
+           </header>
+
+           <main>
+               <h3>Data Types - Arrays</h3>
+
+                <p>
+                    Arrays are ordered sequences of values. Those values can be of any data type and are
+                    separated by comma. Arrays have to be declared inside braces.
+                </p>
+                    
+                
+                <pre>
+                    <code class="javascript">
+    var students = [ "John" , "Mary", "Paul" ];
+    var primeNumbers = [ 2, 3, 5, 7, 11, 13 ];
+                    </code>
+                </pre>
+
+                <p>
+                    Like strings, arrays also have length and their elements have their own indexes.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    students = [ "John" , "Mary", "Paul" ];
+    console.log(students.length); // The console will show 3
+    console.log(students[0]);  // The console will show "John"
+
+                    </code>
+                </pre>
+
+                <p>
+                    Array elements can also be arrays and objects.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    var groups = [ 
+        [ "John" , "Mary" ],
+        [ "Peter" , "Joana", "Andrew", "Julio" ],
+        [ "Caroline" , "Helen", "Mark" ]
+    ];
+
+                    </code>
+                </pre>
+
+
+                <p>
+                    This was an example of a multidimensional array. Can you guess what is the length
+                    of the groups array? 
+                </p>
+
+                <p>
+                    The groups array has 3 elements. 
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    console.log(groups.length); // The console will 3
+    console.log(groups[1]);  // The console will [ "Peter" , "Joana", "Andrew", "Julio" ]
+
+    /* We can access arrays inside arrays by adding the index notation as many times as needed */
+
+    console.log(grupos[1][2]);  // The console will "Andrew"
+
+                    </code>
+                </pre>
+
+                <h4>Array operations</h4>
+                
+                
+                <li>Push - Add elements to the end of an array</li>
+                <li>Pop - Remove the last element of an array</li>
+                <li>Shift - Remove the first element of an array</li>
+                <li>Unshift - Add elements to the beginning of an array</li>
+
+                <pre>
+                    <code class="javascript">
+
+    var courses = [ "HTML", "Python", "PHP" ];
+
+    courses.push("Javascript");
+
+    console.log(courses);  // The console will show [ "HTML", "Python", "PHP", "Javascript" ]
+
+    courses.unshift("Bootstrap");
+
+    console.log(courses);  // The console will show [ "Bootstrap", "HTML", "Python", "PHP", "Javascript" ]
+
+    courses.pop();
+
+    console.log(courses);  // The console will show [ "Bootstrap", "HTML", "Python", "PHP" ]
+
+    courses.shift();
+
+    console.log(courses);  // The console will show [ "HTML", "Python", "PHP" ]
+
+                    </code>
+                </pre>
+
+
+                <p>It's also possible to redefine elements using the index notation</p>
+
+                <pre>
+                    <code class="javascript">
+
+    var ingredients = [ "bread", "cheese", "ham" ];
+
+    ingredients[0] = "whole bread";
+
+    console.log(ingredients);  // The console will show [ "whole bread", "cheese", "ham" ]
+
+                    </code>
+                </pre>
+
+                <li>Slice - extracts part of an array</li>
+
+                <p>
+                    The slice method extracts part of an array. We do it by choosing a 
+                    start and an end index (end element not included).
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    var students = [ "Peter" , "Joana", "Andrew", "Julio", "Kate", "Marie" ];
+    console.log( students.slice(0,3) );
+
+    // The console will show [ "Peter" , "Joana", "Andrew" ]
+
+                    </code>
+                </pre>
+
+                <p>
+                    By omitting  second value we go until the last element with it included.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    var students = [ "Peter" , "Joana", "Andrew", "Julio", "Kate", "Marie" ];
+    
+    console.log( students.slice(3,) );
+    // The console will show ["Julio", "Kate", "Marie"]
+
+                    </code>
+                </pre>
+
+                <p>
+                    We can also use negative numbers to start counting backwards from the end of an array.
+                    To get the last three elements of an array we do:
+                </p>
+
+
+                <pre>
+                    <code class="javascript">
+
+    var students = [ "Peter" , "Joana", "Andrew", "Julio", "Kate", "Marie" ];
+    
+    console.log( students.slice(-3,) );
+    // The console will show ["Julio", "Kate", "Marie"]
+
+                    </code>
+                </pre>
+               
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+           </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>

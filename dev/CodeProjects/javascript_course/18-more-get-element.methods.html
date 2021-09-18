@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="outros_get_element";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>More getElement methods</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <header>
+                <div class="logo-area">
+                    <img src="img/logo_js.png" alt="logo javascript">
+                </div>
+                <div class="course-title">
+                    <h1>Javascript Course for Beginners</h1>
+                    <h2>Instructor: Ivan Lourenço Gomes</h2>
+                </div>
+            </header>
+
+            <main>
+                <h3>More getElement methods</h3>
+                
+                <p>
+                    Up to this point we only used the getElementById to select elements. Now let's explore a few other methods.
+                </p>
+
+                <h4>getElementsByClassName</h4>
+
+                <p>
+                    This method selects elements by class. The difference now is that classes are not unique, we can have multiple elements sharing the same class.
+                    Therefore, this method will always return an array containing the HTML elements that have that class.
+                </p>
+
+                <pre>
+                    <code class="html">
+
+    &lt;div class="example"&gt;Element #1&lt;/div&gt;
+    &lt;div class="example"&gt;Element #2&lt;/div&gt;
+    &lt;div class="example"&gt;Element #3&lt;/div&gt;
+
+                    </code>
+                </pre>
+
+                <div class="example">Element #1</div>
+                <div class="example">Element #2</div>
+                <div class="example">Element #3</div>
+
+                <pre>
+                    <code class="javascript">
+    var elements = document.getElementsByClassName("exemplo");
+    console.log(elements);
+
+    // The console will show an array: [ {...}, {...}, {...} ]
+    // Each of the elements of the array are the HTML elements that share that class
+
+                    </code>
+                </pre>
+
+                <p>
+                    These elements can be accessed by the index, in thsi case [0], [1] and [2]. By using the index, we can manipulate their content:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    
+    elements[0].innerHTML = "Changing the text of the first element";
+
+                    </code>
+                </pre>
+
+
+                <h4>getElementsByTagName</h4>
+
+                <p> This methods works just like the previous one, but this time we'll select element using the tag name (div, h1, p, img, etc).
+                </p>
+
+                <pre>
+                    <code class="html">
+
+    &lt;p&gt;Paragraph 1&lt;/p&gt;
+    &lt;p&gt;Paragraph 2&lt;/p&gt;
+    &lt;p&gt;Paragraph 3&lt;/p&gt;
+
+                    </code>
+                </pre>
+
+                <p>Paragraph 1</p>
+                <p>Paragraph 2</p>
+                <p>Paragraph 3</p>
+
+                <pre>
+                    <code class="javascript">
+    var paragraphs = document.getElementsByTagName("p");
+    console.log(paragraphs);
+
+    // The console will show an array: [ {...}, {...}, {...} ]
+
+                    </code>
+                </pre>
+
+                <p>
+                    Now, using the index to alter these elements doesn't seem to be very efficient.
+                    How can we make changes to all of these elements no matter how many of them exist in the page?
+                </p>
+
+                <p>
+                    The answer is: Loops! The subject of our next lesson.
+                </p>
+                
+
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>

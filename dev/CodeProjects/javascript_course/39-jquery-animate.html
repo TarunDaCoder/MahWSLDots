@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="jquery_animate";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>jQuery - Animate</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <header>
+                <div class="logo-area">
+                    <img src="img/logo_js.png" alt="logo javascript">
+                </div>
+                <div class="course-title">
+                    <h1>Javascript Course for Beginners</h1>
+                    <h2>Instructor: Ivan Lourenço Gomes</h2>
+                </div>
+            </header>
+
+            <main>
+
+                <h3>jQuery - Animate</h3>
+
+                <p>
+                    Besides the methods seen in the previous lesson, jQuery offers another way of adding effects to HTML 
+                    elements through the animate() method. This method allows us to control 
+                    different CSS properties.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    $("element").animate({property: value}, speed, callback function);
+
+                    </code>
+                </pre>
+
+                <p>
+                    The first argument is an object composed of CSS properties and values. One cool thing is that we can use the incremental
+                    operator for the values. 
+                </p>
+
+                <pre>
+                        <code class="javascript">
+    
+        $("#animate").click(function(){
+            $("#square").animate({
+                width: '+=20px',
+                height: '+=20px'
+            });
+        }); 
+    
+                        </code>
+                    </pre>
+
+               
+
+                <button id="animate">Enlarge the square</button>
+
+                <div id="square" style="color:white; font-size: 18px; margin-top: 30px; width: 60px; height: 60px; background-color: black"></div>
+
+                <br>
+
+                <p>
+                    In the above example, the two properties were changed at the same time. If we would like to change the height only after the width change is 
+                    finished, we don't need to use the callback function because animate methods used in sequence automatically wait for the previous one 
+                    to finish before they start, working as a queue.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    $("#animate").click(function(){
+
+        $("#square").animate({
+            width: '+=20px'
+        },500);
+
+        $("#square").animate({
+            height: '+=20px'
+        }),500;
+
+    });
+
+                    </code>
+                </pre>
+
+
+                <h5>Important:</h5>
+
+                <li>
+                    Most CSS properties can be animated, except colors.
+                </li>
+                
+                <li> 
+                    The CSS properties that don't follow the variable naming rules have to be written in the lower 
+                    camel case style, like paddingLeft or borderRadius.
+                </li>
+
+                
+                
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+    </body>
+
+    <script src="js/scripts.js"></script>
+
+</html>
+

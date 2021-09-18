@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="funcoes";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Functions</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+
+    <body>
+
+       <div class="page-container">
+           <header>
+               <div class="logo-area">
+                   <img src="img/logo_js.png" alt="logo javascript">
+               </div>
+               <div class="course-title">
+                   <h1>Javascript Course for Beginners</h1>
+                   <h2>Instructor: Ivan Lourenço Gomes</h2>
+               </div>
+           </header>
+
+           <main>
+               <h3>Functions</h3>
+               
+                <p>
+                    Functions are blocks of code designed to perform a specific task. Functions can help 
+                    organize the code, avoid repetition and reduce the complexity of the code.
+                </p>
+
+                <p>Let's start with a simple example.</p>
+
+
+                <pre>
+                    <code class="javascript">
+    
+    // Creating the function
+
+    function sum_numbers() {
+        var num1 = 5;
+        var num2 = 2;
+        var sum  = x + y;
+        console.log(sum);   
+    }
+
+    // The function is only executed after being invoked:
+
+    sum_numbers(); // The console will show 7
+
+                    </code>
+                </pre>
+
+                <p>
+                    Some important observations about what we've just done:
+                </p>
+
+                <ul>
+                    <li>We use the <i>function</i> keyword to create a function.</li>
+                    <li>Then we name the function following the same rules as for naming variables.</li>
+                    <li>Inside parenthesis we'll add the arguments (or parameters) of the function. Even if
+                        the function has no arguments, like above, we need to open and close parenthesis when creating and when invoking it.
+                    </li>
+                    <li>Inside the curly braces '{ }' we'll write the block of code we want to be executed every time the function is invoked.</li>
+                    <li>Semicolons are not needed at the end of function the declarations</li>                   
+                </ul>
+
+                <h4>Function arguments</h4>
+
+                <p>
+                    The arguments of the function are like variables that can be used inside the functions. In the example
+                    above our function will always sum 5 + 2, which is not very useful. By using arguments we can 
+                    make it dynamic and sum different numbers everytime.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    function sum_args(num1,num2) {
+        var sum  = num1 + num2;
+        console.log(sum); 
+    }
+
+    /* Now when invoking the function we can use any numbers we want: */
+
+    sum_args(10,25); // The console will show 35
+
+    sum_args(1000,375); // The console will show 1375
+
+    sum_args(-2,47); // The console will show 45
+
+
+
+                    </code>
+                </pre>
+
+                <h4>The return statement</h4>
+
+                <p>
+                    Our function is now dynamic but it's performing only one task: sending the result to the console. 
+                    This can be useful for testing purposes but not more than that. It would be good 
+                    if our function could return the value so we could do anything we want with it.
+                </p>
+
+                <p>
+                    That's what the return statement will do:
+                </p>
+
+
+                <pre>
+                    <code class="javascript">
+
+    function sum_args(num1,num2) {
+        var sum  = num1 + num2;
+        return sum; 
+    }
+
+                    </code>
+                </pre>
+
+                <p>
+                    Now we can do anything we want with it, like using in other calculations and 
+                    sending the result to an HTML element.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    var average = sum_args(6,10) / 2;
+
+    console.log( sum_args(13,21) );
+
+                    </code>
+                </pre>
+
+                <p>
+                    Can you sum -27 and 55 and show the result in the element below?
+                </p>
+               
+                <div class="caixa_outer inline">
+
+                    <div id="sum_result">
+                            This element has id="sum_result"
+                    </div>
+                </div>
+
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+           </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>

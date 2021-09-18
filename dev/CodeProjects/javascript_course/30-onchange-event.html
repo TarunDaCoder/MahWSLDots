@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="evento-onchange";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>The onchange event</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <header>
+                <div class="logo-area">
+                    <img src="img/logo_js.png" alt="logo javascript">
+                </div>
+                <div class="course-title">
+                    <h1>Javascript Course for Beginners</h1>
+                    <h2>Instructor: Ivan Lourenço Gomes</h2>
+                </div>
+            </header>
+
+            <main>
+
+                <h3>The onchange event</h3>
+
+                <p>
+                    In the previous lesson we were getting values from form fields and showing them after pressing a button.
+                    We can also do it without buttons, by monitoring changes to the form fields.
+                </p>
+
+                <form>
+                    <select id="education_level">
+                        <option value="opt1">High School</option>
+                        <option value="opt2">College Graduation</option>
+                        <option value="opt3">Masters Degree</option>
+                        <option value="opt4">PHD</option>
+                    </select>
+                </form>
+
+                <br>
+
+                <p>Show the selected options here: <strong id="selected_level"></strong></p>
+
+                <pre>
+                    <code class="javascript">
+
+    document.getElementById("education_level").onchange = function () {
+
+        var selectField = document.getElementById("education_level");
+        var selectedOption = selectField.options.selectedIndex;
+        var selectedValue = selectField.options[selectedOption].innerHTML;
+        document.getElementById("selected_level").innerHTML = selectedValue;
+
+    };
+
+                    </code>
+                </pre>
+
+               <p>
+                   The other field types can also be monitored with the onchange event, we just need to pay attention to which 
+                   element is changing.
+                   Radio buttons and checkboxes have multiple items, so we need to apply the event to each of the items using a loop:
+               </p>
+
+
+
+               <form>
+                    Select the items for your order: <br>
+                    <input type="checkbox" name="meal" value="Hamburger"> Hamburger<br>
+                    <input type="checkbox" name="meal" value="Fries"> Fries<br>
+                    <input type="checkbox" name="meal" value="Soda"> Soda
+                    
+                </form>
+
+                <br>
+
+                <p>Show the items selected: <strong id="selected_check"></strong></p>
+
+                <br>
+
+
+                <pre>
+                    <code class="javascript">
+
+    var check = document.getElementsByName("meal");
+
+    for (var a = 0;  a < check.length; a++) {
+
+        check[a].onchange = function () {
+
+            document.getElementById("selected_check").innerHTML = "";
+            
+            for (var b = 0;  b < check.length; b++) {
+                
+                if (check[b].checked) {
+                    document.getElementById("selected_check").innerHTML += '&lt;li&gt;' + check[b].value + '&lt;/li&gt;';
+                }
+            }
+        }  
+    }
+
+                    </code>
+                </pre>
+
+                
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>
+

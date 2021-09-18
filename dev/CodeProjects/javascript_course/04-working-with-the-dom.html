@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="working_dom";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Working With the DOM</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+
+    <body>
+
+       <div class="page-container">
+           <header>
+               <div class="logo-area">
+                   <img src="img/logo_js.png" alt="logo javascript">
+               </div>
+               <div class="course-title">
+                   <h1>Javascript Course for Beginners</h1>
+                   <h2>Instructor: Ivan Lourenço Gomes</h2>
+               </div>
+           </header>
+
+           <main>
+               <h3>Working With the DOM</h3>
+               
+                <p>
+                    To interact with the HTML elements of our page we'll need to use some methods and properties of the document object.
+                </p>
+
+                <h4>getElementById and innerHTML</h4>
+
+                <p>
+                    
+                    To select HTML elements we can search for them by their class name, Id, tag name (h1, p, img, div, etc.) and more. Let's start by the Id which is
+                    the easiest way.
+                </p>
+
+                <div class="caixa_outer blueborder">
+
+                    <div id="blue_box">
+                          This element has id="blue_box". Can you get the text inside it and send it to the console? And can you change its content?
+                    </div>
+                </div>
+                    
+                <p>
+                    To select the blue box we need to use the getElementByID method and the innerHTML property. 
+                    (Remember that Javascript is a "case sensitive" language, so be careful with the letters that must be written in Caps). 
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    
+    // Getting the content of an element
+    document.getElementById("blue_box").innerHTML;
+
+    // Changing the content of an element
+    document.getElementById("blue_box").innerHTML = "This will be the new content of the element.";
+
+                    </code>
+                </pre>
+
+                <p>
+                    Now based on what we've seen above, let's try to send the content of the blue box to the console then change its content.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    
+    console.log( document.getElementById("blue_box").innerHTML );
+    document.getElementById("blue_box").innerHTML = "Some new content";
+                    </code>
+                </pre>
+
+                <p>
+                    This seems like a silly example but this is just the starting point to 
+                    understand how to work with elements and their content.
+                </p>
+
+                <p>
+                    We'll soon start doing more complex examples like getting user input, changing CSS of elements, and what's more important:
+                    performing those actions after an event is fired by the user, like the click of a button.
+                </p>
+
+                <p>
+                    Before we can start doing that though, there is some basic knowledge about Javascript and programming in general that we need to acquire first.
+                </p>
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+           </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>

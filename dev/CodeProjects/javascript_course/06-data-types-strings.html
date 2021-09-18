@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="tipos_dados_strings";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Data Types - Strings</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+
+    <body>
+
+       <div class="page-container">
+           <header>
+               <div class="logo-area">
+                   <img src="img/logo_js.png" alt="logo javascript">
+               </div>
+               <div class="course-title">
+                   <h1>Javascript Course for Beginners</h1>
+                   <h2>Instructor: Ivan Lourenço Gomes</h2>
+               </div>
+           </header>
+
+           <main>
+               <h3>Data Types</h3>
+               
+                <p>
+                    In the previous lesson we learned that we can use variables to store values. These values can be of different types.
+                    The most basic ones are <strong>Strings</strong>, which are text values like "John", "I'm 34 years old" or "www.google.com" 
+                    and <strong>Numbers</strong>.
+                </p>
+                    
+                <p>
+                    These two types plus the <strong>Booleans</strong> (true or false) and <strong>Null and Undefined</strong>, 
+                    are know as the <strong>primitive data types</strong>. 
+                    Besides the primitives we also have two important data types which are the <strong>Arrays</strong> 
+                    and <strong>Objects</strong>. We are going to explore
+                    each of these data types in details. 
+                </p>
+
+                <p>
+                    To find out what's the type of a variable we can use the typeof operator:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    var firstName = "John";  
+    
+    console.log( typeof firstName ); // the result will be "string"
+
+    var age = 40;  
+    
+    console.log( typeof age ); // the result will be "number"
+                    </code>
+                </pre>
+
+                <h3>Strings</h3>
+
+                <p>
+                    Text values are called strings. Actually the best definition for a string is a sequence of characters.
+                    Strings are identified with single or double quotation marks.
+                </p>
+
+                <p>
+                    Let's create some example variables to store string values:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    var firstName = "John";  // we can use double quotation marks
+    
+    var lastName = 'Doe'; // or single quotation marks
+    
+    var passportNumber = 'XYZ0123';  
+    
+    var phoneNumber = "909299999";
+    
+    var email = 'john_doe@gmail.com';
+    
+    var bio = "John Doe started his web developer career in 2010 and has contributed to many important projects, like...";
+                    </code>
+                </pre>
+
+                <p>
+                    Note that in the examples above we have the phoneNumber value composed by numbers only. 
+                    Why is it string and not number type?
+                </p>
+
+                <p>
+                    Although the value is composed by numbers only, it won't be used in any calculations so the
+                    string type is more indicated.
+                </p>
+
+                <p>
+                    On the other hand if we are to store the year of birth of a 
+                    person we might as well use the number type, because we can subtract the current year by the 
+                    year of birth to find the person's age.
+                </p>
+
+                <p>
+                    There are important operations that can be done with strings, as shown below:
+                </p>
+
+                <ul>
+                    <li><h5>Concatenation</h5></li>
+                </ul>
+
+                <pre>
+                    <code class="javascript">
+    var firstName = "John";
+
+    var lastName = "Doe";
+
+    var fullName = firstName + " " + lastName;
+
+    console.log(fullName); 
+
+    // The result will be "John Doe"
+
+    // Therefore the plus sign (+) is used for concatenation with string values.
+                    </code>
+                </pre>
+                
+                <ul>
+                    <li><h5>Length and Index</h5></li>
+                </ul>
+
+                <p>
+                    As said above, strings are sequences of characters. Those sequences has a size (length)
+                    and each of the characters has their specific position in the sequence, which is the index.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    var firstName = "John";
+
+    console.log(firstName.length); // The result will be 4
+
+    /* 
+    The length property of a string represents its number of characters.
+    Each character has its own index, starting from zero.
+    White spaces also count. 
+    */
+
+    console.log(firstName[0]); // The result will be 'J'
+    
+
+    // We can access each character of a string using their index inside brackets. 
+
+                    </code>
+                </pre>
+
+                <ul>
+                    <li><h5>String replace</h5></li>
+                </ul>
+
+                <p>
+                    There are useful ways of using the replace method. Let's say we have the following
+                    url: "https://www.udemy.com". We can easily remove the https:// by replacing it with an empty string.
+                    To use this method first inform the piece of text you want to replace and then the piece of text to 
+                    replace it.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    var url = "https://www.udemy.com";
+
+    console.log( url.replace( "https://" , "" ) ); // It will show "www.udemy.com"
+
+                    </code>
+                </pre>
+
+                <p>
+                    There are many other operations we can do with strings but we are not going to
+                    explore them now. If you want you can <a target="_blank" href="https://www.w3schools.com/js/js_string_methods.asp">learn more here</a>.
+                </p>
+
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+           </main>
+
+        </div>
+        <script src="js/scripts.js"></script> 
+    </body>
+
+</html>

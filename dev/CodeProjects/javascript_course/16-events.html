@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="events";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Events</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <header>
+                <div class="logo-area">
+                    <img src="img/logo_js.png" alt="logo javascript">
+                </div>
+                <div class="course-title">
+                    <h1>Javascript Course for Beginners</h1>
+                    <h2>Instructor: Ivan Lourenço Gomes</h2>
+                </div>
+            </header>
+
+            <main>
+                <h3>Events</h3>
+                
+                <p>
+                    When we talk about events in Javascript, it's about actions that happen inside the browser. Let's see a few
+                    examples of events: 
+                </p>
+
+                <div class="tableBox">
+                        <table>
+                            <tr>
+                                <th>Event</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>onclick</td>
+                                <td>When the user clicks (PCs) or touches (mobile devices) an element in the page. </td>
+                            </tr>
+                            <tr>
+                                <td>onchange</td>
+                                <td>When an HTML element changes. It's commonly used with form fields.</td>
+                            </tr>
+                            <tr>
+                                <td>onmouseover</td>
+                                <td>When the user moves the cursor over an element.</td>
+                            </tr>
+                            <tr>
+                                <td>onmouseout</td>
+                                <td>When the user moves the cursor out of an element.</td>
+                            </tr>
+                            <tr>
+                                <td>onkeydown</td>
+                                <td>When some key is pressed.</td>
+                            </tr>
+                            
+    
+                        </table>
+                    </div>
+
+                <p>
+                    We can tell the browser which function should be executed when those events are detected.
+                    This will open a new door for us because now we'll be able to interact with the user.
+
+                </p>
+
+                <h5>
+                    onclick, onmouseover e onmouseout
+                </h5>
+                <p>
+                    Let's see a few basic examples:
+                </p>
+                <br>
+
+                <button onclick="show_alert()" id="click-me">Click here</button>
+                <button id="hover-me">Move the cursor over here</button>
+                <button id="leave-me">Move the cursor out of here</button>
+
+
+                <pre>
+                    <code class="html">
+
+    <u>HTML:</u>
+    
+    &lt;button id="click-me"&gt;Click here&lt;&#47;button&gt;
+    &lt;button id="hover-me"&gt;Move the cursor over here&lt;&#47;button&gt;
+    &lt;button id="leave-me"&gt;Move the cursor out of here&lt;&#47;button&gt;
+
+                    </code>
+                </pre>
+
+                <pre>
+                    <code class="javascript">
+
+    <u>Javascript:</u>
+    
+    document.getElementById("click-me").onclick = function() {
+        alert('You clicked the button');
+    };
+
+    document.getElementById("hover-me").onmouseover = function() {
+        alert('You moved the cursor over the button');
+    };
+
+    document.getElementById("leave-me").onmouseout = function() {
+        alert('You moved the cursor out of the button');
+    };
+
+                    </code>
+                </pre>
+                
+                <h5>
+                    onkeydown
+                </h5>
+
+                <p>
+                    The onkeydown event can be applied to a specific element like a form field, or to the document object. Let's see the example below.
+                </p>
+
+
+                <pre>
+                    <code class="javascript">
+    
+    document.onkeydown = function() {
+        alert('You pressed a key');
+    };
+
+                    </code>
+                </pre>
+
+
+                <p>It's also possible to monitor only a specific key. First we need to know how Javascript recognizes which key has been pressed.
+                    For this let's use the event object to get some information about it:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    
+    document.onkeydown = function(event) {
+        alert('You pressed the following key: ' + event.keyCode);
+    };
+
+                    </code>
+                </pre>
+
+                <p>
+                    The keyCode property returns the <a target="_blank" href="https://unicode-table.com/en/#latin-1-supplement">Unicode</a> 
+                    of the pressed key.</p>
+
+                <p>This way we can see that the code for letter 'a' is 65. With this information we can create something that will only fire when
+                    this specific key has been pressed.</p>
+                
+                    <pre>
+                        <code class="javascript">
+        
+        document.onkeydown = function(event) {
+            if(event.keyCode == '65') {
+                alert("Do something if letter 'a' is pressed.");
+            }
+        };
+    
+                        </code>
+                    </pre>
+
+                <h5>Event manipulation via html attribute</h5>
+                
+                <p>
+                    In the examples above we've been using the dom elements to set the events in the Javascript code. 
+                    We can also set those events using HTML attributes:
+                </p>
+
+                <pre>
+                    <code class="html">
+    
+    &lt;button onclick="show_alert()"&gt;Click here&lt;/button&gt;
+
+                    </code>
+                </pre>
+
+                <p>
+                    Now we just need to create the function to be executed when the event is detected.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    function show_alert() {
+        alert('You clicked the button');
+    }
+                    </code>
+                </pre>
+
+               
+
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>

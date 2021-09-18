@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="tipos_objetos";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Data Types - Objects</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+
+    <body>
+
+       <div class="page-container">
+           <header>
+               <div class="logo-area">
+                   <img src="img/logo_js.png" alt="logo javascript">
+               </div>
+               <div class="course-title">
+                   <h1>Javascript Course for Beginners</h1>
+                   <h2>Instructor: Ivan Lourenço Gomes</h2>
+               </div>
+           </header>
+
+           <main>
+               <h3>Data Types - Objects</h3>
+               
+                <p>
+                    Objects, like arrays, are lists of elements. But unlike arrays, objects are not 
+                    ordered. Instead of identifying elements by index, we identify them by 
+                    key. So an object is a list of key / value pairs separated by colon (:). 
+                    
+                </p>
+
+                <p>   
+                    Objects have to be declared inside curly braces { }. 
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    var employee = {
+        'name': 'James Taylor',
+        'yearOfBirth': 1948,
+        'ID': 'SBJ0001',
+        'role': 'IT Analyst'
+    };
+                    </code>
+                </pre>
+
+                <p>
+                    Objects keys are also called properties. To access the properties we can use braces or 
+                    the dot notation:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    console.log( employee['ID'] ); //  The console will show 'SBJ0001'
+
+    console.log( employee.ID ); // Same thing using the dot notation
+                    </code>
+                </pre>
+
+                <p>
+                    Important: the dot notation only works with properties that follow the variables naming rules.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    var test = {
+        'property1': 'Some value',
+        '2a': 'Some other value',
+        09335: 'Another value',
+        'hello-world': 'Last value'
+    }; 
+
+    // 'property1' can be retrieved using the dot notation:
+
+    console.log( test.property1 );  // The console will show 'Some value'
+
+    // The other ones can't because they don't follow the naming rules. They can only be retrieved with braces.
+
+    console.log( test['hello-world'] ); // The console will show 'Last value'
+
+
+                    </code>
+                </pre>
+
+                <p>
+                    We can alter values assigned to properties and add new properties.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    
+    var employee = {
+        'name': 'James Taylor',
+        'yearOfBirth': 1948,
+        'ID': 'SBJ0001',
+        'role': 'IT Analyst'
+    };
+
+    employee.role = 'IT Manager';  // alter a value
+    employee.passport = 'KV09888';  // add a new property
+
+    console.log(employee); 
+
+    /* The console will show:
+    
+    {
+        'name': 'James Taylor',
+        'yearOfBirth': 1948,
+        'ID': 'SBJ0001',
+        'role': 'IT Manager',
+        'passport': 'KV09888'
+    }; 
+    
+    */
+
+                    </code>
+                </pre>
+
+                <p>
+                    From now on you'll commonly work with multidimensional arrays and objects mixed 
+                    together. We just need to pay attention to their structure (braces and curly braces)
+                    and use the correct indentation so it's easy to interpret them.
+                </p>
+
+            <pre>
+                <code class="javascript">
+    var courses = [
+        {
+            'title': 'Learn code in Python 3',
+            'reviews': 6802,
+            'students': 130129,
+            'categories': ['programming', 'technology']
+        },
+
+        {
+            'title': 'Learn PHP -  Beginner to Advanced',
+            'reviews': 1204,
+            'students': 30521,
+            'categories': ['web development', 'programming']
+        },
+
+        {
+            'title': 'Learn Microsoft Excel 2020',
+            'reviews': 4209,
+            'students': 18560,
+            'categories': ['productivity', 'business']
+        }
+        
+    ];
+                </code>
+            </pre>
+
+            <p>
+                Some other aspects worth remembering: 
+                <ul>
+                    <li>Arrays are identified by braces [ ]. </li>
+                    <li>Arrays are ordered lists of values separated by comma.</li>
+                    <li>Objects are identified by curly braces { }.</li>
+                    <li>Objects elements are key / value pairs separated by colon.</li>
+                    <li>Objects elements are separated by comma.</li>
+                </ul>
+            </p>
+
+            <p>
+                Therefore we can conclude the following:
+
+                <ul>
+                    <li>The courses variable is an array containing 3 elements.</li>
+                    <li>The elements of courses array are objects.</li>
+                    <li>Each of these objects has 4 elements</li>
+                    <li>The objects have values of different data types. Strings ('title'), numbers  
+                        ('reviews' and 'students') and arrays ('categories') </li>
+                </ul>
+
+            </p>
+
+            
+
+            <p>
+                How do we get to the 'web development' category of the PHP course then?
+            </p>
+
+            <pre>
+                <code class="javascript">
+
+    console.log( courses[1]['categories'][0] );
+
+                </code>
+            </pre>
+
+            <p>
+                We can use this 'path' to alter the value:
+            </p>
+
+            <pre>
+                <code class="javascript">
+
+    courses[1]['categories'][0] = 'full stack web development';
+    console.log( courses[1]['categories'][0] );  // The console will show ['full stack web development', 'programming']
+
+
+                </code>
+            </pre>
+            
+            
+            
+            <div id="bottom-area">
+                <div class="prev-next-link">
+                    <div class="link-aula" id="prev_class">
+                        
+                    </div>
+                    <div class="link-aula" id="next_class">
+                        
+                    </div>
+                </div>
+                
+                <div class="classes">
+                    <h3>
+                        Contents
+                    </h3>
+                    <ul id="class_index">
+                    </ul>
+                </div>
+            </div>
+
+           </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>

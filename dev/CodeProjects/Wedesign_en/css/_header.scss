@@ -1,0 +1,355 @@
+
+/* Variáveis *******************************************************************************/
+
+$topbar-height-large: 90px;
+$topbar-height-medium: 80px;
+$topbar-height-small: 70px;
+
+$menu_li_color: #FFF;
+$sliding_menu_color: #FFF;
+$topbar_color: $color_01;;
+
+$header-shadow: rgba(0, 0, 0, 0.12);
+
+
+
+/* Fim das Variáveis */
+
+
+
+
+
+/* Global Header Styles ********************************************************************/
+
+
+   header {
+      background-color:  $topbar_color ;
+      @include box-shadow(0px, 2px, 4px, 1px, $header-shadow);
+      text-align: center;
+      line-height: 0;
+      position: fixed;
+      z-index: 98;
+      top: 0;
+      width: 100%;
+      
+
+      .logo, .main-menu, .search-icon, .hamburguer-icon, .utility-icons {
+         height: 100%;
+      }
+
+      .logo h1 {
+            
+            font-family: 'Poppins', sans-serif;
+            font-size: 22px;
+            line-height: 22px;
+            font-weight: 500;
+            color: #FFF;
+            margin-bottom: 0;
+      }
+
+      .main-menu {
+            
+            text-align: right;
+
+            .menu-items {
+               margin: 0;
+               line-height: 1.2em;       
+            }
+      
+            .menu-items li {
+               display: inline-block;
+               padding: 0;
+               text-decoration: none;
+               margin-right: 22px;
+               font-family: 'Poppins', sans-serif;
+               font-weight: 300;
+               font-size: 15px;
+               letter-spacing: 1.22px;
+               
+            }
+            
+            .menu-items a,
+            .menu-items a:visited {
+               color: $menu_li_color;
+
+               &:hover {
+                     color: $color_04;
+               }
+            } 
+      
+         }
+      }
+
+   .ghost-element {
+      width: 100%;
+      height: $topbar-height-small;
+   }
+  
+
+/* End of Global Header Styles */
+
+
+
+/* Main Header Styles ****************************************************/
+
+   .main-header {
+      height: $topbar-height-small;
+      padding-left: 8px;
+      padding-right: 8px;
+
+      .logo {
+            overflow: hidden;
+            h1 {
+                  line-height: 22px;
+                  font-size: 22px;
+
+                  .square {
+                        width: 8px;
+                        display: inline-block;
+                        margin-right: 6px;
+                        background-color: $color_03;
+                  }
+            }
+
+            
+      }      
+
+      .right-space, .hamburguer-icon {
+            display: none;
+      }
+      
+   }
+
+/* End of Main Header Styles */
+
+
+
+
+/* Sliding Header Styles (Sliding Menu) ****************************************************/
+    
+      .sliding-header-menu-outer {
+         position: fixed;
+         z-index: 99;
+         right: -320px;
+         overflow: hidden;
+         width: 320px;
+         height: 100%;
+         @include box-shadow(0px, 2px, 4px, 1px, $header-shadow);
+         @include transition(right,300ms,ease-out);
+      
+         .sliding-header-menu {
+            height: 100vh;
+            background-color: $sliding_menu_color;
+            position: relative;
+            width: 100%;
+
+            .sliding-header-menu-li {
+                  margin: 0;
+                  margin-top: 30px;
+
+            
+                  li {
+                     display: block;
+                     height: 42px;
+                     margin-right: 0;
+                     text-align: center;
+
+                     a, a:visited {
+                           color: $color_11;
+                     }
+                  }
+            }
+         }
+
+      }
+
+      .show-menu { // Make sliding menu come from the right (must come after .sliding-header-menu-outer in css
+         right: 0px;
+      }
+
+/* End of Sliding Header Styles (Sliding Menu) */
+
+
+
+
+
+/* **********************************************************************************************
+***********************************   MEDIA QUERIES   ******************************************* 
+********************************************************************************************** */
+
+
+// Small Screens ****************************************************************************
+/* max-width 640px *********************************************************************/
+
+   @media only screen and (max-width: 40em) {
+      
+      
+      .main-header {  // hide large header
+         .main-menu {
+               .menu-items {
+                     display: none;
+               }
+         }
+
+            .logo{
+                  overflow: hidden;
+                  h1 {
+                        font-size: 22px;
+                        line-height: 22px;
+                  }
+            }
+
+            .right-space, .hamburguer-icon {
+                  display: initial;
+            }
+
+            .hamburguer-menu {
+                  
+            .hamburguer-icon {
+                  img {
+                        width: 18px;
+                        height: auto;
+                  }
+               }
+            }
+      }
+
+      
+
+      
+
+      .sliding-header-menu-close-button {
+         height: $topbar-height-small;
+      }
+
+   }
+
+// End of small Screens
+
+
+    
+
+
+// Medium Screens ***************************************************************************
+    /* min-width 641px and max-width 1023px ************************************************/
+
+   @media only screen and (min-width: 40.063em) and (max-width: 63.938em) {
+
+      .main-header {
+            height: $topbar-height-medium;
+            .main-menu {
+                  .menu-items {
+                        display: none;
+                  }
+            }
+
+            .right-space, .hamburguer-icon {
+                  display: initial;
+            }
+      }
+
+     
+
+         .logo { // imagem do logotipo
+            h1 {
+                  font-size: 22px;
+                  line-height: 22px;
+                  
+            }
+         }
+
+         .hamburguer-menu {
+         
+            .hamburguer-icon {
+               img {
+                     width: 18px;
+                     height: auto;
+               }
+            }
+         }
+
+         .gsk-header-small {
+            // height: $topbar-height-medium ;
+         }
+
+         .sliding-header-menu-close-button {
+            height: $topbar-height-medium;
+         }
+
+         .ghost-element {
+            height: $topbar-height-medium;
+         }
+
+   }
+
+// End of Medium Screens
+
+
+
+
+
+// Large Screens ****************************************************************************
+/* min-width 1024px and max-width 1440px ***********************************************/
+
+   @media only screen and (min-width: 64em) and (max-width: 90em) {
+        
+      .main-header {
+            height: $topbar-height-large;
+      }
+
+      .logo {
+            h1 {
+                  font-size: 22px;
+                  line-height: 22px;
+            }
+
+      }
+
+      .sliding-header-menu-outer {
+         display: none !important;
+      }
+
+      .ghost-element {
+         height: $topbar-height-large;
+      }
+        
+
+   }
+
+// End of Large Screens
+
+
+
+
+
+// Extra Large Screens **********************************************************************
+/* min-width 1441px ********************************************************************/
+
+   @media only screen and (min-width: 90.063em){
+
+      .main-header {
+            height: $topbar-height-large;
+      }
+
+      .logo {
+            h1 {
+                  text-align: left;
+            }
+
+      }
+
+      .sliding-header-menu-outer {
+         display: none !important;
+      }
+
+      .ghost-element {
+         height: $topbar-height-large;
+      }
+     
+   }
+
+// End of Extra Large Screens
+
+
+
+

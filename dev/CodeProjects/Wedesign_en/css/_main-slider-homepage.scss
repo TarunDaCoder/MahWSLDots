@@ -1,0 +1,215 @@
+
+
+.welcome-gallery, .welcome-inner, .welcome-slider {
+    margin: 0;
+    padding: 0;
+}
+
+.welcome-gallery {
+    height: 400px;
+    position: relative;
+    width: 100%;
+
+    .photo-section, .main-section-title, .photo-gradient {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .photo-section { 
+        z-index: 1;
+        
+        img {
+            min-width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 1;
+            @include translateXY( -50%, -50% );
+        }
+    }
+
+    .main-section-title {
+        z-index: 3;
+        height: 100%;
+        text-align: center;
+        
+
+        h1 {
+            font-size: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            color: white;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            color: white;
+        }
+    }
+
+    .photo-gradient {
+        background-color: rgba(0,0,0,0.5);
+        z-index: 2;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* **********************************************************************************************
+***********************************   MEDIA QUERIES   ******************************************* 
+********************************************************************************************** */
+
+
+
+
+    // Small Screens ****************************************************************************
+        /* max-width 640px *********************************************************************/
+
+        @media only screen and (max-width: 40em) {
+           
+            .welcome-gallery {
+            
+                .main-section-title {
+                    padding: 0 40px;
+                }
+            
+            }
+           
+        }   
+
+    // End of small Screens
+
+
+
+
+        
+
+
+    // Medium Screens ***************************************************************************
+        /* min-width 641px and max-width 1023px ************************************************/
+
+        @media only screen and (min-width: 40.063em) and (max-width: 63.938em) {
+            .welcome-gallery {
+                height: 600px;
+
+                .photo-section { 
+                    
+                }
+            
+                .main-section-title {
+                    padding: 0 40px;
+                    h1 {
+                        font-size: 44px;
+
+                    }
+            
+                    h2 {
+                        font-size: 24px;
+
+                    }
+                }
+            
+                .photo-gradient {
+
+                }
+                
+            } 
+        }
+
+    // End of Medium Screens
+
+
+
+
+
+
+
+    // Large Screens ****************************************************************************
+        /* min-width 1024px and max-width 1440px ***********************************************/
+
+        @media only screen and (min-width: 64em) and (max-width: 90em) { 
+
+            .welcome-gallery {
+                height: 500px;
+
+                .photo-section { 
+                    
+                }
+            
+                .main-section-title {
+                    
+                    h1 {
+                        font-size: 48px;
+
+                    }
+            
+                    h2 {
+                        font-size: 22px;
+
+                    }
+                }
+            
+                .photo-gradient {
+
+                }
+                 
+            }
+        }
+
+    // End of Large Screens
+
+
+
+
+
+
+
+    // Extra Large Screens **********************************************************************
+        /* min-width 1441px ********************************************************************/
+
+        @media only screen and (min-width: 90.063em){
+
+            .welcome-gallery {
+                height: 650px;
+
+                .photo-section { 
+                    
+                }
+            
+                .main-section-title {
+                    
+                    h1 {
+                        font-size: 54px;
+
+                    }
+            
+                    h2 {
+                        font-size: 28px;
+
+                    }
+                }
+            
+                .photo-gradient {
+
+                }
+                
+            }
+        }
+
+    // End of Extra Large Screens

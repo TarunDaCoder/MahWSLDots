@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="bom";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>BOM - Browser Object model</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+        
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <header>
+                <div class="logo-area">
+                    <img src="img/logo_js.png" alt="logo javascript">
+                </div>
+                <div class="course-title">
+                    <h1>Javascript Course for Beginners</h1>
+                    <h2>Instructor: Ivan Lourenço Gomes</h2>
+                </div>
+            </header>
+
+            <main>
+                <h3 id="titulo-bom">BOM - Browser Object Model</h3>
+                
+                <p>
+                    The Browser Object Model represents the browser window. Through this object we can interact with certain
+                    properties of the browser, like the width of the window, cursor position, scroll bar, etc.
+                </p>
+
+                <p>
+                    While the DOM is accessed through the document object, the BOM is accessed through the window object.
+                </p>
+
+
+                <pre>
+                    <code class="javascript">
+    console.log( window.innerWidth );  
+    /* This property returns the internal width of the browser's window  */
+                    </code>
+                </pre>
+
+                <p>
+                    Thw window object can be omitted: 
+                </p>
+
+
+                <pre>
+                    <code class="javascript">
+    console.log( innerWidth );
+                    </code>
+                </pre>
+
+                <p>
+                    However, it is recommended to mention the window object to avoid confusion with variables. Unless for
+                    specific methods that are very well known and unique enough not to be confused with variables and your own functions,
+                    like the alert method:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    alert( "Message" );
+
+    // this is actually:
+
+    window.alert( "Message" );
+                    </code>
+                </pre>
+
+                <p>Or the console.log:</p>
+
+                <pre>
+                    <code class="javascript">
+    window.console.log("this works");
+                    </code>
+                </pre>
+
+                <p>
+                    Global variables are also stored in the window object:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    var myName = "Tom";
+
+    console.log(window.myName);
+                    </code>
+                </pre>
+
+                <p>
+                    This means that if you create a new variable called innerWidth, it's going to overwrite the original property from the 
+                    window object, so be extra careful when naming variables. <a target="_blank" href="https://www.w3schools.com/jsref/obj_window.asp">See here a list of all window properties and methods.</a>
+                </p>
+
+                <p>There are many interesting things we can do with the BOM, let's see one example below:</p>
+
+                <h4>window.onmousemove</h4>
+
+                <p>
+                    The onmousemove event tracks the cursor movement around the browser's window. Let's use it
+                    to show a message when the cursor is at a specific position relative to the top of the window. 
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    window.onmousemove = function(e){
+        if (e.pageY < 5) {
+            alert("Don't miss our flash sale. Go to the the products section for exclusive discounts.");
+        }
+    };
+                    </code>
+                </pre>
+
+
+               <p>In the next lessons we'll explore more features of the window object.</p>
+                
+
+               
+
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>

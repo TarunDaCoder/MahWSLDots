@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="metodos-tempo";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Time methods</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+        <style>
+
+ 
+            .showbox {
+                padding: 5%;
+            }
+
+            .loader {
+                position: relative;
+                width: 75px;
+            }
+
+            .loader::before {
+                content: '';
+                display: block;
+                padding-top: 100%;
+            }
+
+            .circular {
+                animation: rotate 2s linear infinite;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+
+            .path {
+                stroke-dasharray: 2, 200;
+                stroke-dashoffset: 0;
+                animation: dash 1.5s ease-in-out infinite;
+                stroke-linecap: round;
+                stroke: #27ae61;
+            }
+
+            @keyframes rotate {
+            100% {
+                transform: rotate(360deg);
+            }
+            }
+
+            @keyframes dash {
+            0% {
+                stroke-dasharray: 1, 200;
+                stroke-dashoffset: 0;
+            }
+            50% {
+                stroke-dasharray: 89, 200;
+                stroke-dashoffset: -35px;
+            }
+            100% {
+                stroke-dasharray: 89, 200;
+                stroke-dashoffset: -124px;
+            }
+            }
+
+            #relogio {
+                font-size: 24px; 
+                font-weight: bold; 
+                color: white; 
+                background-color: black; 
+                border-radius: 4px; 
+                padding: 20px; 
+                display: inline-block;
+            }
+
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <header>
+                <div class="logo-area">
+                    <img src="img/logo_js.png" alt="logo javascript">
+                </div>
+                <div class="course-title">
+                    <h1>Javascript Course for Beginners</h1>
+                    <h2>Instructor: Ivan Lourenço Gomes</h2>
+                </div>
+            </header>
+
+            <main>
+                <h3>Time methods</h3>
+                
+                <p>
+                    The window object has two methods that allow us to delay the execution of a block of code
+                    or execute it repetitively between an interval of time.
+                </p>
+
+                <h4>setTimeout</h4>
+
+                <p>
+                    The setTimeout function accepts two arguments: the function that should be executed after the 
+                    stipulated time and the stipulated time in milliseconds.
+                </p>
+
+                <p>
+                    This function passed as an argument is a callback function, something that will be further explained later in the course.
+                </p>
+
+
+                <pre>
+                    <code class="javascript">
+    
+    window.setTimeout(callback function,time in milliseconds)
+
+                    </code>
+                </pre>
+
+                <p>
+                    Let's send one message to the console, wait 3 seconds, then send another.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    console.log("Message 1");
+
+    window.setTimeout(function() {
+        console.log("Message 2");
+    },3000);
+
+                    </code>
+                </pre>
+
+                <p>
+                    Another example would be showing an element for a given period of time, let's say a spinner loader.
+                </p> 
+
+                <button id="show-loader">Show</button>
+                
+                <div id="spinner-loader" class="spinner-loader" style="display: none">
+                    <div class="showbox">
+                        <div class="loader">
+                            <svg class="circular" viewBox="25 25 50 50">
+                            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <pre>
+                    <code class="javascript">
+
+    document.getElementById("show-loader").onclick = function () {
+
+        document.getElementById("spinner-loader").style.display = "block";
+        window.setTimeout(function(){
+            document.getElementById("spinner-loader").style.display = "none";
+        }, 5000);
+
+    };
+
+                    </code>
+                </pre>
+
+                
+
+
+                <h4>setInterval</h4>
+
+                <p>
+                    The SetInterval method is similar to the setTimeout, the difference is that it keeps repeating 
+                    the callback function forever, unless you stop it.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    var count = 0;
+    window.setInterval(function(){
+        console.log(count);
+        count++;
+    }, 1000);
+    
+                    </code>
+                </pre>
+
+
+                <h5>Interrupting time methods</h5>
+
+                <p>
+                    Both setTimeout and setInterval can be interrupted. To do this we need to assign them 
+                    to a variable and then use the clearTimeout or clearInterval respectively.
+                </p>
+
+                <p>
+                    Let's limit the above code to 5 seconds:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    var count = 0;
+
+    var timeInterval = window.setInterval(function(){
+        console.log(count);
+        count++;
+        if (count > 5) {
+            window.clearInterval(timeInterval);
+        }
+    }, 1000);
+    
+                    </code>
+                </pre>
+                
+                
+                <h4>The clock challenge</h4>
+
+                <p>
+                    Use the Date object and the setInterval methods to make the 
+                    clock below work in real time.
+                </p>
+
+                <div id="relogio">
+                    <span id="hours">00</span> :
+                    <span id="minutes">00</span> :
+                    <span id="seconds">00</span>
+                </div>
+               
+                
+
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>

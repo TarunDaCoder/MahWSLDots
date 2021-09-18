@@ -1,0 +1,256 @@
+
+
+$section_title_color: $color_11;
+$section_content_color: $color_11;
+
+.section-title {
+      
+    text-align: center;
+
+      h3 {
+       font-size: 22px;
+       font-family: 'Poppins', sans-serif;
+       font-weight: 600;
+       margin-top: 30px;
+       margin-bottom: 8px;
+       color: $section_title_color;
+       text-transform: uppercase
+    }
+
+    hr {
+      text-align: center;
+      margin: auto;
+      width: 40px;
+      border: solid 2px $color_03;
+       
+    }
+}
+
+.about-us {
+   text-align: center;
+
+
+    
+
+   img {
+      float: right;
+      width: 100%;
+      height: auto;
+      margin-left: 0;
+      margin-bottom: 12px;
+   }
+   .about-us-text {
+      text-align: left;
+
+      p {
+         color: $section_content_color;
+         font-family: 'Lato', sans-serif;
+         font-weight: normal;
+         font-size: 16px;
+         line-height: 28px;
+      }
+   }
+
+}
+
+.servicos {
+    text-align: center;
+
+    .service-stripe {
+        padding: 60px 0;
+        background-color: $color_01;
+        color: white;
+        display: inline-block;
+        height: 100%;
+        position: relative;
+        
+
+        .service-stripe-inner {
+
+           
+
+            .stripe-arrow {
+                display: inline-block;
+                height: 100%;
+                line-height: 100%;
+                cursor: pointer;
+
+                p {
+                    font-size: 32px;
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 600;
+                }
+
+                &:focus {
+                    outline: 0;
+                }
+
+
+            }
+    
+            .stripe-content {
+                display: inline-block;
+                height: 100%;
+                font-family: Arial, sans-serif;
+                font-weight: normal;
+                font-size: 18px;
+
+                #service-title {
+                    font-size: 18px;
+                    font-family: 'Poppins', sans-serif;
+                    font-weight: 600;
+                    // margin-right: 4px;
+                    color: $color_04;
+                }
+
+                p {
+                    display: inline;
+                }
+            }
+        }
+
+
+    }
+
+
+}
+
+
+/* **********************************************************************************************
+***********************************   MEDIA QUERIES   ******************************************* 
+********************************************************************************************** */
+
+
+
+
+// Small Screens ****************************************************************************
+/* max-width 640px *********************************************************************/
+
+@media only screen and (max-width: 40em) {
+   
+    .section-title { 
+        padding: 60px 0 40px 0;
+        
+        hr {
+           margin-bottom: 20px;
+           
+        }
+     }
+   
+}   
+// End of small Screens
+   
+   
+   
+// Medium Screens ***************************************************************************
+/* min-width 641px and max-width 1023px ************************************************/
+
+@media only screen and (min-width: 40.063em) and (max-width: 63.938em) {
+   
+    .section-title {
+        padding: 60px 0 40px 0;
+  
+        h3 {
+           font-size: 22px;
+        }
+    }
+
+   .about-us {
+
+      
+
+      img {
+         width: 26%;
+         margin-left: 12px;
+         margin-bottom: 8px;
+      }
+
+      .about-us-text {
+         
+         p {
+            font-size: 16px;
+         }
+
+      }
+   }
+
+}
+
+// End of Medium Screens
+   
+   
+   
+   
+// Large Screens ****************************************************************************
+/* min-width 1024px and max-width 1440px ***********************************************/
+
+@media only screen and (min-width: 64em) and (max-width: 90em) { 
+   
+    .section-title {
+        padding: 70px 0 50px 0;
+  
+        h3 {
+           font-size: 22px;
+        }
+    }
+
+    .about-us {
+      
+
+        img {
+            width: 20%;
+            margin-left: 12px;
+            margin-bottom: 8px;
+        }
+
+      .about-us-text {
+         
+         p {
+            font-size: 18px;
+         }
+
+      }
+   }
+
+   
+}
+
+// End of Large Screens
+   
+   
+   
+// Extra Large Screens **********************************************************************
+/* min-width 1441px ********************************************************************/
+
+@media only screen and (min-width: 90.063em) {
+   
+    .section-title {
+        padding: 80px 0 60px 0;
+  
+        h3 {
+           font-size: 22px;
+        }
+    }
+
+    .about-us {
+
+        img {
+            width:20%;
+            margin-left: 12px;
+            margin-bottom: 8px;
+        }
+      
+
+        .about-us-text {
+            
+            p {
+            font-size: 18px;
+            }
+
+        }
+    }
+         
+}
+
+// End of Extra Large Screens
+

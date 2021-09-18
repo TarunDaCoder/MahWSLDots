@@ -1,0 +1,11 @@
+.cache/
+.cargo/
+.local/
+.npm/
+.pub-cache/
+.ssh/
+git/
+.flutter
+.histfile
+.xsession
+.zshrc

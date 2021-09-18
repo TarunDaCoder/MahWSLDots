@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="tipos_dados_null";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Data Types - null and undefined</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+
+    <body>
+
+       <div class="page-container">
+           <header>
+               <div class="logo-area">
+                   <img src="img/logo_js.png" alt="logo javascript">
+               </div>
+               <div class="course-title">
+                   <h1>Javascript Course for Beginners</h1>
+                   <h2>Instructor: Ivan Lourenço Gomes</h2>
+               </div>
+           </header>
+
+           <main>
+               <h3>Null and Undefined</h3>
+               
+                <p>
+                    Variables not always have values. Null and Undefined represent the lack of value.
+                </p>
+
+                <h4>
+                    Undefined
+                </h4>
+
+                <p>
+                    When we create a variable but do not assign any value to it. Its value and data type becomes undefined.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    var noValue;
+    console.log(noValue); // undefined
+    console.log(typeof noValue); // undefined
+
+                    </code>
+                </pre>
+
+                <p>
+                    Undefined can also appear on other cases, for example when we try to 
+                    access an index that does not exist in a string:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    var name = "Peter";
+    console.log(name[0]); // Console will show "P"
+    console.log(name[4]); // Console will show "r"
+    console.log(name[10]); // Console will show undefined
+
+
+                    </code>
+                </pre>
+
+                <p>
+                    When we talk about arrays and objects we'll see that:
+
+                    <li>
+                        Like strings, arrays have a length and each of their elements have an index
+                        from which we can access them. When we try to access an index that does not
+                        exist, we'll get the value of undefined.
+                    </li>
+                    <br>
+                    <li>
+                        Objects have properties. A car object might have "Manufacturer" or "Name" properties
+                        but probably not an "Email" property. If we try to get a non-existent property of an
+                        object, we'll get the value of undefined.
+                    </li>
+                </p>
+
+
+
+                <h4>
+                    Null
+                </h4>
+
+                <p>
+                    Null is not exactly a data type and for many people <a href="https://medium.com/@hbarcelos/why-i-banned-null-from-my-js-code-and-why-you-should-too-13df90323cfa" target="_blank">it should be avoided.</a>
+                </p>
+
+                <p>
+                    Null is normally used to reset the value of a variable that had a value previously:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    var temperature = 35;
+    console.log(temperature);
+
+    temperature = null;
+    console.log(temperature); // The console will show null
+    console.log(typeof temperature); // The console will show object - which could be misleading
+    
+                    </code>
+                </pre>
+
+                <p>
+                    However, the same can be done with undefined:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    var temperature = 35;
+    console.log(temperature);
+
+    temperature = undefined;
+    console.log(temperature); // The console will show undefined
+    
+                    </code>
+                </pre>
+
+                <p>
+                    In fact, Javascript even consider null and undefined to be equal:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    console.log(undefined == null);  // The console will show true
+
+                    </code>
+                </pre>
+
+                <p>
+                    Some people probably just use it to differentiate when a value has never been assigned to 
+                    a variable and when its value has just been reset. 
+                </p>
+
+                <p>
+                    In our examples we'll leave null aside and use undefined when needed.
+                </p>
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+           </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script> 
+
+    </body>
+
+</html>
+

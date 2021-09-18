@@ -1,0 +1,141 @@
+.tab-box {
+    display: inline-block;
+    margin: auto;
+    font-size: 0;
+    background-color: $color_01;
+    color: white;
+
+    .box-tabs {
+
+        text-align: left;
+        background-color: $color_01a;
+
+        .single-tab {
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 300;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            display: inline-block;
+            padding: 0 40px;
+            height: 70px;
+            line-height: 70px;
+    
+        }
+    }
+
+    #box-text {
+        text-align: left;
+        padding: 40px;
+        font-family: Arial, sans-serif;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 28px;
+    }
+}
+
+
+
+
+/* **********************************************************************************************
+***********************************   MEDIA QUERIES   ******************************************* 
+********************************************************************************************** */
+
+
+
+
+// Small Screens ****************************************************************************
+/* max-width 640px *********************************************************************/
+
+@media only screen and (max-width: 40em) {
+
+    .tab-box {
+
+    
+        .box-tabs {
+    
+            .single-tab {
+                font-size: 16px;
+                padding: 0 20px;
+                height: 60px;
+                line-height: 60px;
+        
+            }
+        }
+    
+        #box-text {
+            text-align: left;
+            padding: 40px;
+            font-family: Arial, sans-serif;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 28px;
+        }
+    }
+
+
+}   
+
+// End of small Screens
+
+
+
+// Medium Screens ***************************************************************************
+/* min-width 641px and max-width 1023px ************************************************/
+
+@media only screen and (min-width: 40.063em) and (max-width: 63.938em) {
+  
+    .tab-box {
+
+    
+        .box-tabs {
+    
+            .single-tab {
+                font-size: 16px;
+                padding: 0 20px;
+                height: 60px;
+                line-height: 60px;
+        
+            }
+        }
+    
+        #box-text {
+            text-align: left;
+            padding: 40px;
+            font-family: Arial, sans-serif;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 28px;
+        }
+    }
+
+}
+
+// End of Medium Screens
+
+
+
+
+// Large Screens ****************************************************************************
+/* min-width 1024px and max-width 1440px ***********************************************/
+
+@media only screen and (min-width: 64em) and (max-width: 90em) { 
+   
+
+   
+}
+
+// End of Large Screens
+
+
+
+// Extra Large Screens **********************************************************************
+/* min-width 1441px ********************************************************************/
+
+@media only screen and (min-width: 90.063em) {
+   
+      
+         
+}
+
+// End of Extra Large Screens

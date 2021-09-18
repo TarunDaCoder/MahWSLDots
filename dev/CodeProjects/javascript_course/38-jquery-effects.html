@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="jquery_effects";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>jQuery - Effects</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+        <style>
+            
+            .tabs {
+                width: 450px;
+                max-width: 100%;
+                background-color: brown;
+                padding: 0px 12px;
+                font-size: 0;
+                margin: 0;
+            }
+
+            .title-area div {
+                display: inline-block;
+                /* border: 1px solid black; */
+                padding: 15px 0;
+                font-size: 16px;
+                font-family: 'Poppins', sans-serif;
+                color: white;
+            }
+
+            #tab-title {
+                width: 90%;
+            }
+
+            #toggle-tab {
+                width: 10%;
+                text-align: center;
+                cursor: pointer;
+            }
+
+            #tab-content {
+                padding: 12px 0;
+                font-size: 14px;
+                font-family: 'Poppins', sans-serif;
+                color: white;
+            }
+
+            .flip {
+                transform: rotate(180deg);
+            }
+
+
+
+        </style>
+    
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <header>
+                <div class="logo-area">
+                    <img src="img/logo_js.png" alt="logo javascript">
+                </div>
+                <div class="course-title">
+                    <h1>Javascript Course for Beginners</h1>
+                    <h2>Instructor: Ivan Lourenço Gomes</h2>
+                </div>
+            </header>
+
+            <main>
+
+                <h3>jQuery - Effects</h3>
+
+                <p>
+                    In the previous lessons we learned that jQuery has a few methods to apply effects with very little code. The hide() method is one example.
+
+                <p>
+                    To customize the effects we can pass two arguments when calling the methods: the speed and a callback function.
+                </p>
+
+                <h5>Speed and callback function of effects</h5>
+
+                <p>
+                    When calling the hide() method, for example, we can define the speed and something to be executed when the effect is finished, which is 
+                    the callback function. The speed is informed in milliseconds.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+        $("element").hide(speed, callback function);
+
+                    </code>
+                </pre>
+
+
+                
+
+                <p>
+                    To understand how the callback function works, let's hide the button below in a time of 2 seconds (or 2000 milliseconds). After the 
+                    effect is completed, let's show the text that has an Id of  "hidden-text".
+                </p>
+
+                <button id="hide-button">Hide</button>
+                <h4 style="display: none" id="hidden-text">The button is now hidden</h4>
+                <br>
+
+                <pre>
+                    <code class="javascript">
+
+    $( "#hide-button" ).click(function() {
+        $(this).hide(2000, function(){
+            $("#hidden-text").show();
+        });
+        
+    });
+                    </code>
+                </pre>
+
+                <p>
+                    Note that the text only appears after the hide effect finishes, this is because we used the callback function. Let's try to 
+                    use it out of the callback function and see what happens:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    $( "#hide-button" ).click(function() {
+        $(this).hide(2000);
+        $("#hidden-text").show();
+        
+    });
+    
+                    </code>
+                </pre>
+
+                <p>
+                    This happens because Javascript is an asynchronous language, which means that many operations can be performed at the same time. So in 
+                    our example, the show() method doesn't have to be wait for the hide() method to finish, unless we intend to.
+                </p>
+
+                <h4>hide(), show() and toggle()</h4>
+
+                <p>
+                    Besides the hide() and show() methods, there's also the toggle() method that can be very useful.
+                </p>
+
+                <div class="tabs">
+
+                    <div class="title-area">
+                        <div id="tab-title">Tab title</div>
+                        <div id="toggle-tab"> 
+                           
+                            <svg width="14px" height="9px" viewBox="0 0 14 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                                    <g id="Tutorial_800" transform="translate(-392.000000, -1170.000000)" fill-rule="nonzero" stroke="#FFFFFF" stroke-width="2">
+                                        <g id="Group-2" transform="translate(320.000000, 1158.000000)">
+                                            <polyline id="Path-3" points="73 19.2603762 79.1481559 13 85 19.2603762"></polyline>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+
+                        </div>
+                        
+                    </div>
+
+                    <div id="tab-content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut congue metus mi, a sodales elit blandit in. 
+                            Pellentesque mattis sem vitae diam aliquet gravida. Nulla eu elit non lorem faucibus egestas vitae ac tortor.
+                    </div>
+
+
+                </div>
+
+                <pre>
+                    <code class="javascript">
+
+    $("#toggle-tab").click(function() {
+
+        $("#tab-content").toggle();
+        $("#toggle-tab").toggleClass("flip");
+        
+    });
+
+                    </code>
+                </pre>
+
+                <p>
+                    In the above example we used the toggle() method to hide and show the text content. We can also use it with classes, like we did 
+                    with the toggleClass. This way we add and remove classes and with it we can create nice effects, like rotating the arrow next 
+                    to the tab title.
+                </p>
+
+                <p>
+                    Performing the above operation in pure Javascript would demand many lines of code and logic.
+                </p>
+
+
+                <h4>slideUp(), slideDown() and slideToggle()</h4>
+
+                <p>
+                    Another ineresting effect is sliding elements up and down when hiding/showing them.
+                </p>
+
+                <pre>
+                        <code class="javascript">
+    
+    $("#toggle-tab").click(function() {
+
+        $("#tab-content").slideToggle(500);
+        $("#toggle-tab").toggleClass("flip");
+        
+    });
+    
+                        </code>
+                    </pre>
+
+                    <h4>fadeIn(), fadeOut(), fadeToggle() e fadeTo()</h4>
+
+                    <p>
+                        Another option is to use the fade methods, that first change the opacity of the elements, then their display property.
+                    </p>
+
+                    <pre>
+                            <code class="javascript">
+        
+    $("#toggle-tab").click(function() {
+
+        $("#tab-content").fadeToggle();
+        $("#toggle-tab").toggleClass("flip");
+
+    });
+        
+                            </code>
+                        </pre>
+
+                    
+
+                    <p>
+                        The fadeTo() is used to set a specific opacity to the element. In this case there's no change to the display property.
+                        This method needs to arguments, the time and the opacity.
+                    </p>
+
+                    <pre>
+                        <code class="javascript">
+    
+    $("#example").fadeTo(200, 0.15); 
+    
+                        </code>
+                    </pre>
+
+                    <br>
+                    <p>
+                        <strong>
+                            * The speed in jQuery can also be set with the keywords "slow" and "fast", that represent 600ms and 200ms 
+                            respectively. When no speed is informed, by using empty parenthesis, jQuery uses the default value of 400ms.  
+                        </strong>
+                    </p>
+
+
+
+                
+
+    
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+    </body>
+
+    <script src="js/scripts.js"></script>
+
+</html>
+

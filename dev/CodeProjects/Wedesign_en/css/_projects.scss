@@ -1,0 +1,341 @@
+
+
+$slick_dot_active: $color_01;
+$slick_dot_inactive: $color_13;
+$event_date: #C3AF79;
+$event_title: #fff;
+
+.projetos {
+   text-align: center;
+
+
+
+   .projetos-title {
+       
+      text-align: left;
+
+      h3 {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;  
+            font-size: 22px;
+            margin-bottom: 8px;
+            color: $section_title_color;
+            text-transform: uppercase
+      }
+
+      hr {
+         margin: 0;
+      }
+   }
+
+   .slider-projetos {
+
+      overflow: hidden;
+      margin-left: -20px;
+      margin-right: -20px;
+
+      .slider-002 {
+         // margin-top: 40px;
+
+            .slick-dots {
+            margin: 14px auto 0px auto;
+            bottom: 0;
+            width: auto;
+            position: relative;
+
+            > li {
+                  height: auto;
+                  width: auto;
+                  
+                  margin: 0 0;
+                  padding: 0;
+
+                  button:before {
+                  content: &bull;;
+                  font-size: 42px;
+                  @include opacity( 1 );
+                  color: $slick_dot_inactive;
+                  }
+            }
+
+            li.slick-active button:before {
+                  color: $slick_dot_active;
+                  font-size: 42px;
+                  opacity: 1;
+
+            }
+            }
+
+         .projetos-item-outer {
+               margin: 0;
+               padding: 10px;
+               transition: 0.5s;
+               overflow: hidden;
+
+
+               .projetos-item {
+                  position: relative;
+                  max-width: 100%;
+                  padding-top: 100%;
+
+                  .projetos-item-image {
+
+                     img {
+
+                           width: 100%;
+                           height: 100%;
+                           object-fit: cover;
+                           position: absolute;
+                           left: 50%;
+                           top: 50%;
+                           z-index: 2;
+                           @include translateXY( -50%, -50% );
+                     }
+
+                     
+                  }
+
+                  .item-info {
+                     position: absolute;
+                     width: 100%;
+                     z-index: 3;
+                     text-align: left;
+                     bottom: 20px;
+                     padding: 0 6%;
+
+                     .date {
+                           color: $event_date;
+                           font-family: 'lato', 'sans-serif';
+                           font-size: 15px;
+                     }
+
+                     .title {
+                           color: $event_title;
+                           font-family: 'lato', 'sans-serif';
+                           font-size: 15px;
+                           line-height: 18px;
+                           margin-top: 5px;
+                     }
+                  }
+
+                  .gradient-filter {
+                     position: absolute;
+                     top: 0;
+                     left: 0;
+                     width: 100%;
+                     height: 100%;
+                     z-index: 2;
+                     background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 27%, #000000 100%);
+                  }
+
+                  
+               }
+         }
+
+         
+            
+      }
+   }
+}
+
+
+/* **********************************************************************************************
+***********************************   MEDIA QUERIES   ******************************************* 
+********************************************************************************************** */
+
+
+
+
+    // Small Screens ****************************************************************************
+        /* max-width 640px *********************************************************************/
+
+        @media only screen and (max-width: 40em) {
+            .projetos {
+               .slider-projetos {
+                  padding: 0;
+                  margin-left: -10px;
+                  margin-right: -10px;
+
+                  .slider-002 {
+                     padding: 0 40px;
+
+                     .slick-dots {
+                           margin: 20px auto 0px auto;
+                     }
+
+                     .projetos-item-outer {
+                         
+                     }
+                  }
+               }
+            }
+        }   
+ 
+     // End of small Screens
+ 
+ 
+ 
+ 
+         
+ 
+ 
+     // Medium Screens ***************************************************************************
+         /* min-width 641px and max-width 1023px ************************************************/
+ 
+        @media only screen and (min-width: 40.063em) and (max-width: 63.938em) {
+
+            .projetos {
+
+               .projetos-title {
+                  padding: 40px 0 40px 0;
+            
+                  h3 {
+                     font-size: 24px;
+                  }
+               }
+
+               .slider-projetos {
+                  padding: 0;
+                  overflow: hidden;
+                  text-align: center;
+
+                  .slider-002 {
+                        padding: 0 40px;
+
+                     .projetos-item-outer {
+         
+                           .projetos-item {
+                              padding-top: 123%;
+
+                              .item-info {
+         
+                                 .date {
+                                       font-size: 14px;
+                                 }
+         
+                                 .title {
+                                       font-size: 14px;
+                                       margin-top: 2px;
+                                 }
+                              }
+                           }
+                     }
+                     
+                  }
+               }
+            }
+
+        }
+ 
+     // End of Medium Screens
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+     // Large Screens ****************************************************************************
+         /* min-width 1024px and max-width 1440px ***********************************************/
+ 
+        @media only screen and (min-width: 64em) and (max-width: 90em) { 
+          
+            
+            .projetos { 
+
+               .projetos-title {
+                  padding: 40px 0 20px 0;
+            
+                  h3 {
+                     font-size: 26px;
+                  }
+               }
+
+               .slider-projetos {
+                  padding: 0;
+                  .slider-002 {
+                     // margin-top: 70px;
+
+                     .projetos-item-outer {
+         
+                           .projetos-item {
+                              padding-top: 398px;
+                           }
+                     }
+
+                     .projetos-item-outer:hover {
+                           
+                              -moz-transform: translate(0, -8px); -webkit-transform: translate(0, -8px); transform: translate(0, -8px);
+                              transition: 0.5s;
+                              
+                        }
+                     
+                  }
+               }
+            }
+            
+        }
+ 
+     // End of Large Screens
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+     // Extra Large Screens **********************************************************************
+         /* min-width 1441px ********************************************************************/
+ 
+        @media only screen and (min-width: 90.063em){
+            
+            .projetos {
+
+               .projetos-title {
+                  padding: 40px 0 20px 0;
+
+            
+                  h3 {
+                     font-size: 28px;
+                  }
+               }
+
+               .slider-projetos {
+                  padding: 0;
+                  
+                  .slider-002 {
+                     // margin-top: 70px;
+
+                     .projetos-item-outer {
+         
+                           .projetos-item {          
+                              padding-top: 512px;
+
+                              .item-info {
+         
+                                 .date {
+                                       font-size: 18px;
+                                 }
+         
+                                 .title {
+                                       font-size: 18px;
+                                       line-height: 24px; 
+                                 }
+                              }
+                           }
+                     }
+
+                     .projetos-item-outer:hover {
+                           
+                           -moz-transform: translate(0, -8px); -webkit-transform: translate(0, -8px); transform: translate(0, -8px);
+                           transition: 0.5s;
+                              
+                     }
+                     
+                  }
+               }
+            }
+                
+         }
+ 
+     // End of Extra Large Screens

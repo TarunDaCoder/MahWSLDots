@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="tipos_dados_numbers";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Data Types - Numbers</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+
+    <body>
+
+       <div class="page-container">
+           <header>
+               <div class="logo-area">
+                   <img src="img/logo_js.png" alt="logo javascript">
+               </div>
+               <div class="course-title">
+                   <h1>Javascript Course for Beginners</h1>
+                   <h2>Instructor: Ivan Lourenço Gomes</h2>
+               </div>
+           </header>
+
+           <main>
+               <h3>Numbers</h3>
+               
+                <p>
+                    Number values are assigned to variables without quotation marks:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    var birthYear = 1982; 
+    var price = 16.99;  // decimal places must be separated by a dot.
+    var temperature = -5;
+    
+    var bigNumber = 2e45; 
+    /* large numbers in Javascript can be represented by the exponential notation. 
+    // This example means 2 x 10<sup>45</sup> */
+
+                    </code>
+                </pre>
+
+                <p>
+                    Numbers are used for all sorts of calculations, from simple math operations to complex expressions.
+                </p>
+
+                <ul>
+                    <li><h5>Basic Math Operations</h5></li>
+                </ul>
+
+                <pre>
+                    <code class="javascript">
+    var num1 = 20;
+    var num2 = 3;
+
+    var sum = num1 + num2;
+    var subtraction = num1 - num2;
+    var division = num1 / num2;
+    var multiplication = num1 * num2;
+
+    var average = (num1 + num2) / 2;
+
+    /*
+    Parenthesis can be used to form expressions. In this case it was used to define the order
+    of the operations. Without parenthesis, the division would have been done before the sum,
+    resulting in an incorrect average.
+    */
+
+                    </code>
+                </pre>
+
+                <ul>
+                    <li><h5>The Math Object</h5></li>
+                </ul>
+
+                <p>
+                    We can do more advanced operations using the built-in Math object and its methods.
+                    Don't worry if you still have trouble undestanding the concept of objects and 
+                    methods, all of this will be clear later in the course.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    var power = Math.pow(2,4);  /*  This does 2<sup>4</sup>, which is 16. */
+
+    var roundedNumber = Math.round(2.7); // Rounds to the nearest integer. Result: 3
+
+    var roundUp = Math.ceil(4.3) // Rounds to the next integer. Result: 5
+    
+    var roundDown = Math.floor(4.6) // Rounds to the current integer. Result: 4
+
+    var squareRoot = Math.sqrt(36) // Square root. Result: 6
+
+    var randomNumber = Math.random() // The result is a random number between 0 and 1
+                    </code>
+                </pre>
+
+                <ul>
+                    <li><h5>Methods of the number object</h5></li>
+                </ul>
+
+                <p>
+                    In Javascript, every data type is an object and has its own methods. This is something 
+                    that can be a bit confusing at first but it will become clearer as we advance in the course.
+                </p>
+
+                <p>
+                    When we have a variable with a number assigned to it, we can use a few methods:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    var myNumber = 3.78633;
+    
+    // toFixed() rounds it to a fixed number of decimal places
+
+    console.log( myNumber.toFixed(2) ); // will show 3.79
+    console.log( myNumber.toFixed(4) ); // will show 3.7863
+
+
+                    </code>
+                </pre>
+
+                <p>Check out more number methods <a href="https://www.w3schools.com/js/js_number_methods.asp" target="_blank">here</a> </p>
+
+                <ul>
+                    <li><h5>Incremental operators</h5></li>
+                </ul>
+
+                <p>
+                    One common set of operations we usually need to do with numbers is incrementing and decrementing.
+                    When we start using loops this will turn out to be essential.
+                </p>
+
+                <p>
+                    Let's say we want to increment 5 to the current value of a variable. We have two ways
+                    of doing it.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    var myNumber = 20;
+    myNumber = myNumber + 5;
+    console.log(myNumber); // The result will be 25
+
+                    </code>
+                </pre>
+
+                <p>
+                    This structure variable = variable + value can be simplified with the incremental operator (+=)
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    myNumber = 1;
+    myNumber += 5;
+    console.log(myNumber); // The result will be 6
+
+    // We can also use *=, /= e -= for incremental multiplication, division and subtraction
+
+                    </code>
+                </pre>
+
+                <p>
+                    The incremental operator += also works with strings:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    var name = "John";
+    name += " ";
+    name += "Doe";
+
+    console.log(name); // The console will show "John Doe"
+    
+                    </code>
+                </pre>
+                
+
+                <h4>Type conversions</h4>
+
+                <p>
+                    There will be cases when type conversions will be necessary. Let's say we receive
+                    numbers from text inputs and they comes as strings (this is a very common situation).
+                    In order to use them in calculations we'll need to convert them to numbers first.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    var firstNumber = "21"; 
+    var secondNumber = "4";
+
+    console.log(firstNumber + secondNumber);
+    // The result will be 214 because the plus sign does concatenation on strings.
+
+                    </code>
+                </pre>
+
+                <p>
+                    To convert strings to numbers we can use ParseInt (for integers) or parseFloat (for numbers with decimals) functions.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+   
+    var firstNumber = "21"; 
+    var secondNumber = "4";
+
+    console.log(  parseInt(firstNumber) +  parseInt(secondNumber) );
+    //The result will be 25
+
+    // To do the opposite we can use the toString method.
+
+    var yearOfBirth = 1986;
+    
+    console.log(yearOfBirth.toString() +  " is the year I was born.");
+
+                    </code>
+                </pre>
+
+                <p>
+                        Have you noticed the difference in the structure of number and string conversions? One was done with
+                        parseInt(firstNumber) while the other was done with yearOfBirth.toString(). This happens because
+                        the first one is a Javascript global function while the other is a method of the string object. In
+                        Javascript every data type is an object.  
+                </p>
+
+                <p>
+                    A bit confusing, right? Don't worry about understanding this concept now. When you get more 
+                    comfortable with the language,
+                    it will be understood naturally.
+                </p>
+
+                <p>
+                    If you're unsure on how to do the conversion, just type on Google "JS string to integer" or 
+                    "JS number to string" and you can confirm the way you should do it.
+                </p>
+
+                <p>
+                    Always keep an eye on the type of your variables because many times a lack of conversion
+                    goes unnoticed and can lead to bugs in your code. 
+                </p>
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+           </main>
+
+        </div>
+        <script src="js/scripts.js"></script> 
+    </body>
+
+</html>

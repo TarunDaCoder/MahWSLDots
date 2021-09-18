@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="tipos_dados_booleans";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Data Types - Booleans</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+
+    <body>
+
+       <div class="page-container">
+           <header>
+               <div class="logo-area">
+                   <img src="img/logo_js.png" alt="logo javascript">
+               </div>
+               <div class="course-title">
+                   <h1>Javascript Course for Beginners</h1>
+                   <h2>Instructor: Ivan Lourenço Gomes</h2>
+               </div>
+           </header>
+
+           <main>
+               <h3>Booleans</h3>
+
+                <p>
+                    Booleans are the "true" and "false" values. They are a fundamental piece of
+                    any programming language and they are used to control all the logic of
+                    our programs.
+                </p>
+
+                <p>Booleans are created when we use comparison operators:</p>
+
+                <div class="tableBox">
+                        <table>
+                            <tr>
+                                <th>Operator</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td> &gt; </td>
+                                <td>Greater than</td>
+                            </tr>
+                            <tr>
+                                <td> &gt;= </td>
+                                <td>Greater than or equal to</td>
+                            </tr>
+                            <tr>
+                                <td> &lt; </td>
+                                <td>Less than</td>
+                            </tr>
+                            <tr>
+                                <td> &lt;= </td>
+                                <td>Less than or equal to</td>
+                            </tr>   
+                            <tr>
+                                <td> == </td>
+                                <td>Equal to</td>
+                            </tr>
+                            <tr>
+                                <td> === </td>
+                                <td>Identical (same type and value)</td>
+                            </tr>
+                            <tr>
+                                <td> != </td>
+                                <td>Not equal to</td>
+                            </tr>
+                            <tr>
+                                <td> !== </td>
+                                <td>Not equal value or not equal type</td>
+                            </tr>
+
+                            
+    
+                        </table>
+                    </div>
+
+                <pre>
+                    <code class="javascript">
+    20 > 2; // true
+
+    2 >= 2; // true
+
+    5 < 5; // false
+
+    5 <= 10; // true
+
+    20 == 20; // true
+
+    'john' == 'johnny' // false
+
+    'a' == 'A' // false
+
+    20 === "20"; // false - same value but different types
+
+    20 != 10; // true
+
+    10 != 10; // false
+
+    "10" !== 10; // true - type is different
+
+
+    /* 
+    Be careful when using greater than and less than operators with different data types. 
+    That can lead to unexpected results 
+    */
+ 
+                    </code>
+                </pre>
+
+                <p>
+                    We'll use booleans on conditional structures. Let's say you will offer
+                    finance options for you customers on orders of US$1000 or above:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    var orderValue = 2800;
+
+    if( orderValue >= 1000 ) {
+        console.log("You are eligible to finance your order.");
+    } else {
+        console.log("Finance options are not available for orders below US$1000");
+    }
+ 
+                    </code>
+                </pre>
+
+                <p>
+                    We'll explore conditionals in depth in the next few lessons.
+                </p>
+
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+           </main>
+
+        </div>
+        <script src="js/scripts.js"></script>
+    </body>
+
+</html>

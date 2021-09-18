@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="data-hora";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Date & Time</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+
+
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <header>
+                <div class="logo-area">
+                    <img src="img/logo_js.png" alt="logo javascript">
+                </div>
+                <div class="course-title">
+                    <h1>Javascript Course for Beginners</h1>
+                    <h2>Instructor: Ivan Lourenço Gomes</h2>
+                </div>
+            </header>
+
+            <main>
+                <h3>Date & Time</h3>
+                
+                <p>
+                    In Javascript we can easily work with Date & Time using the Date class. To create an object of this type we use
+                    the <i>new</i> keyword, something that will be further explained later. 
+                </p>
+                
+
+                <pre>
+                    <code class="javascript">
+
+    // Creating a Date object
+    var dateObj = new Date();
+
+    console.log(dateObj);
+
+                    </code>
+                </pre>
+
+
+                <p>
+                    By doing this, we create an object with the current date and time formed by weekday,  month, day, year, 
+                    hours, minutes, seconds and timezone.
+                </p>
+
+                    <h5>Methods of the Date object</h5>
+
+
+                    <div class="tableBox">
+                        <table>
+                            <tr>
+                                <th>Method</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>getDate()</td>
+                                <td>Returns the day of the month (1 to 31)</td>
+                            </tr>
+                            <tr>
+                                <td>getDay()</td>
+                                <td>Returns the weekday (0 - Sunday to 6 - Saturday)</td>
+                            </tr>
+
+                            <tr>
+                                <td>getFullYear()</td>
+                                <td>Returns the full year (YYYY)</td>
+                            </tr>
+
+                            <tr>
+                                <td>getMonth()</td>
+                                <td>Returns the month (0 to 11)</td>
+                            </tr>
+
+                            <tr>
+                                <td>getHours()</td>
+                                <td>Returns the hours (0 to 23)</td>
+                            </tr>
+
+                            <tr>
+                                <td>getMinutes()</td>
+                                <td>Return the minutes (0 to 59)</td>
+                            </tr>
+
+                            <tr>
+                                <td>getSeconds()</td>
+                                <td>Returns the seconds (0 to 59)</td>
+                            </tr>
+
+                            <tr>
+                                <td>getMilliseconds()</td>
+                                <td>Returns the milliseconds (0 to 999)</td>
+                            </tr>
+
+                            <tr>
+                                <td>getTime()</td>
+                                <td>Returns the number of milliseconds since the Epoch(Jan 1st, 1970, 00:00:00)</td>
+                            </tr>
+
+                            <tr>
+                                <td>setTime()</td>
+                                <td>Creates a specific date from milliseconds since the epoch.</td>
+                            </tr>
+                            
+    
+                        </table>
+                    </div>
+
+
+                <h5>Unix Epoch</h5>
+
+                <p>
+                    The Epoch is something present in most programming languages. We can consider it the starting point of counting the time.
+                    This is useful to do calculations with date and time.
+                </p>
+
+                <p>
+                    Javascript uses the Unix Epoch, which is:  Jan 1st, 1970, 00:00:00, UTC.
+                </p>
+
+                <pre>
+                        <code class="javascript">
+                    
+    var dateObj = new Date();
+
+    console.log(dateObj.getTime());
+
+                        </code>
+                    </pre>
+
+                    <p>
+                        The getTime() method returns the number of milliseconds since the Epoch (Remember that 1 second = 1000 milliseconds).
+                        See the table below for a few conversions done with milliseconds:
+                    </p>
+
+                    <div class="tableBox">
+                            <table>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Milliseconds (ms)</th>
+                                </tr>
+                                <tr>
+                                    <td>1 second</td>
+                                    <td>1.000</td>
+                                </tr>
+                                <tr>
+                                    <td>1 minute</td>
+                                    <td>60.000</td>
+                                </tr>
+                                <tr>
+                                    <td>1 hour</td>
+                                    <td>3.600.000</td>
+                                </tr>
+                                <tr>
+                                    <td>1 day</td>
+                                    <td>86.400.000</td>
+                                </tr>
+                                <tr>
+                                    <td>1 year (365 days)</td>
+                                    <td>31.536.000.000</td>
+                                </tr>
+        
+                            </table>
+                        </div>
+
+                        <p>
+                            How to calculate how many hours have passed since the Epoch?
+                        </p>
+
+                        <pre>
+                            <code class="javascript">
+
+    var dateObj = new Date();
+
+    dateObj = dateObj.getTime();
+
+    var hours = dateObj / 3600000;
+
+    console.log(Math.floor(hours));
+
+                            </code>
+                        </pre>
+
+                        <h5>How to create specific dates</h5>
+
+                        <p>
+                            In the examples above we created date objects without passing any arguments, this is why 
+                            they represented the current time. But we can also pass arguments to create specific dates.
+                        </p>
+
+                        <li>One numeric argument: milliseconds since the epoch</li>
+                        <li>Two numeric arguments: year and month (<strong>** Don't forget months go from 0 to 11 **</strong>)</li>
+                        <li>Three numeric arguments: year, month and day</li>
+                        <li>Four numeric arguments: year, month, day and hours</li>
+                        <li>Five numeric arguments: year, month, days, hours, minutes</li>
+                        <li>Six numeric arguments: year, month, day, hours, minutes and seconds</li>
+
+                        <pre>
+                            <code class="javascript">
+
+    var dateObj = new Date(2020,2,18);
+    console.log( dateObj );                              
+
+                            </code>
+                        </pre>
+
+                        <p>We can also pass strings as arguments in three different formats:</p>
+
+                        <li>ISO date: "2020-03-18" (YYYY-MM-DD)</li>
+                        <li>Short Date: "03/18/2020" (MM/DD/YYYY)</li>
+                        <li>Long Date: "Mar 18 2020" or "18 Mar 2020"</li>
+
+                        <pre>
+                            <code class="javascript">
+
+    var dateObj = new Date("2020-03-18");
+    console.log( dateObj ); 
+                                
+                            </code>
+                        </pre>
+
+                        <h5>Challenge: Calculating date intervals</h5>
+
+                        <p>
+                            If a product is ordered on March 26, 2020 and delivered on April, 02, 2020, how many
+                            days does it take to be delivered?
+                        </p>
+
+                        <p>Delivery time: <strong id="delivery_time">Show the number of days here</strong></p> 
+
+
+
+                
+
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>

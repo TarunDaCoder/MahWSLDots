@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="formularios";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Forms</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <header>
+                <div class="logo-area">
+                    <img src="img/logo_js.png" alt="logo javascript">
+                </div>
+                <div class="course-title">
+                    <h1>Javascript Course for Beginners</h1>
+                    <h2>Instructor: Ivan Lourenço Gomes</h2>
+                </div>
+            </header>
+
+            <main>
+
+                <h3>Forms</h3>
+                
+                <p>
+                    Knowing how to handle forms is an essential skill in web development. In this lesson we'll learn how 
+                    to work with form fields.
+                </p>
+
+                <h4>Retrieving the value of a field</h4>
+
+                <p>
+                    Earlier in the course we've learned how to get the value from input fields unsing the <i>value</i> property.
+                    Now let's see how to get the vaues of different types of fields.
+                </p>
+
+                <h5>Select Box</h5>
+
+                <form>
+                    <select id="options">
+                        <option value="opt1">Beach</option>
+                        <option value="opt2">Mountain</option>
+                        <option value="opt3">City</option>
+                    </select>
+                </form>
+
+                <br>
+
+                <button id="show_option">Show</button>
+
+                <p>Show the selected options here: <strong id="selected_option"></strong></p>
+
+
+                <pre>
+                    <code class="javascript">
+
+    document.getElementById("show_option").onclick = function () {
+
+        var selectField = document.getElementById("options");
+        var selectedOption = selectField.options.selectedIndex;
+        var selectedValue = selectField.options[selectedOption].innerHTML;
+        document.getElementById("selected_option").innerHTML = selectedValue;
+
+    };
+
+                    </code>
+                </pre>
+
+                <p>
+                    There's an easy way of doing this, since select boxes have a <i>value</i> property that stores the value of the selected option.
+                    However with this method we can only get the value, not the inner html.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+        var selectedOption = document.getElementById("options").value;
+        console.log(selectedOption);
+
+                    </code>
+                </pre>
+
+
+                <p>
+                    Besides getting the selected valur from a select box, we can also use Javascript to force the selection of an option.
+                    We do this by defining the value attribute.
+                </p>
+
+
+                <pre>
+                    <code class="javascript">
+
+    document.getElementById('options').value = "opt3";
+
+                    </code>
+                </pre>
+
+
+                
+                <br>
+
+                <h5>Radio Buttons</h5>
+
+                <form>
+
+                    <input type="radio" name="gender" value="Male" checked> Male<br>
+                    <input type="radio" name="gender" value="Female"> Female<br>
+                    <input type="radio" name="gender" value="I'd rather not inform"> I'd rather not inform
+                    
+                </form>
+
+                <br>
+
+                <button id="show_radio">Show</button>
+
+                <p>Show the selected option: <strong id="selected_radio"></strong></p>
+
+                <pre>
+                    <code class="javascript">
+
+    document.getElementById("show_radio").onclick = function () {
+
+        var radio = document.getElementsByName("gender");
+        
+        var radio_selected;
+        
+        for (var a = 0;  a < radio.length; a++) {
+            if (radio[a].checked) {
+                radio_selected = radio[a].value;
+            }
+        }
+        
+        document.getElementById("selected_radio").innerHTML = radio_selected;
+
+    };
+
+                    </code>
+                </pre>
+
+
+                <h5>CheckBoxes</h5>
+
+                <form>
+
+                    <input type="checkbox" name="interest" value="Front-End Development"> Front-End Development<br>
+                    <input type="checkbox" name="interest" value="Back-End Development"> Back-End Development<br>
+                    <input type="checkbox" name="interest" value="Design"> Design
+                    
+                </form>
+
+                <br>
+
+                <button id="show_check">Show</button>
+
+                <p>
+                    Show a list of the selected options: <br>
+                    <strong id="selected_check"></strong>
+                </p>
+
+                <br>
+
+                <pre>
+                    <code class="javascript">
+
+    document.getElementById("Show_check").onclick = function () {
+
+
+        var check = document.getElementsByName("interest");
+
+        document.getElementById("selected_check").innerHTML = "";
+
+        for (var b = 0;  b < check.length; b++) {
+            if (check[b].checked) {
+                document.getElementById("selected_check").innerHTML += '&lt;li&gt;' + check[b].value + '&lt;/li&gt;';
+            }
+        }
+    
+
+    };
+
+                    </code>
+                </pre>
+
+                
+
+                <br>
+
+
+
+                
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>
+

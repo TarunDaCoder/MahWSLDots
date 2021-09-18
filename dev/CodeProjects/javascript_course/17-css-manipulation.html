@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="manipulacao_css";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>CSS Manipulation</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <header>
+                <div class="logo-area">
+                    <img src="img/logo_js.png" alt="logo javascript">
+                </div>
+                <div class="course-title">
+                    <h1>Javascript Course for Beginners</h1>
+                    <h2>Instructor: Ivan Lourenço Gomes</h2>
+                </div>
+            </header>
+
+            <main>
+                <h3>CSS Manipulation</h3>
+                
+                <p>
+                    With Javascript we can manipulate the CSS of any element of the page. 
+                    For this, we just need to use the style property of the elements.
+                </p>
+
+                <p>
+                    The style property is an object that has the CSS properties.
+                </p>
+
+
+                <pre>
+                    <code class="html">
+    &lt;button id="color_button"&gt;Click here to change color and move it to the right&lt;/button&gt;
+                    </code>
+                </pre>
+
+                <button id="color_button">Click here to change color and move it to the right</button>
+
+                <pre>
+                    <code class="javascript">
+
+    document.getElementById("color_button").onclick = function() {
+        document.getElementById("color_button").style['background-color'] = "purple";
+        document.getElementById("color_button").style.transform = "translateX(100px)";
+    };
+
+    /* Since the background-color property does not folow the variable name rules, we need to use braces to access it. */
+
+
+                    </code>
+                </pre>
+
+                <p>
+                    By using the keyword 
+                    <i>this</i> we can simplify our code:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    document.getElementById("color_button").onclick = function() {
+        this.style['background-color'] = "purple";
+        this.style.transform = "translateX(100px)";
+    };
+    
+
+    // We can also simplify it by creating a variable and assigning the HTML element to it:
+
+    var button = document.getElementById("color_button");
+
+    button.onclick = function() {
+        button.style['background-color'] = "purple";
+        button.style.transform = "translateX(100px)";
+    };
+
+
+                    </code>
+                </pre>
+
+
+
+
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>

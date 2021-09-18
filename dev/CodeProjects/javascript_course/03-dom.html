@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="dom";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>DOM - Document Object Model</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+
+    <body>
+
+       <div class="page-container">
+           <header>
+               <div class="logo-area">
+                   <img src="img/logo_js.png" alt="logo javascript">
+               </div>
+               <div class="course-title">
+                   <h1>Javascript Course for Beginners</h1>
+                   <h2>Instructor: Ivan Lourenço Gomes</h2>
+               </div>
+           </header>
+
+           <main>
+               <h3>DOM - Document Object Model</h3>
+               
+                <p>
+                    Now that we've had a short introduction about how Javascript works, we need to learn
+                    how we can interact with the elements of our page. 
+                </p>
+
+                <h4>What is the DOM?</h4>
+
+                <p>The Document Object Model is an object created by the web browser as soon as the page is loaded.
+                    This object contains all the nodes of our HTML page, which are the HTML elements. A simple 
+                example is provided below:</p>
+                    
+
+                <pre>
+                    <code class="html">
+    
+    &lt;html&gt;
+        
+        &lt;head&gt;
+            &lt;title&gt;My Title&lt;/title&gt;
+        &lt;/head&gt;
+        
+        &lt;body&gt;
+            &lt;h1&gt;My Header&lt;/h1&gt;
+            &lt;a href="#" &gt;My Link&lt;/a&gt;
+        &lt;/body&gt;
+
+    &lt;/html&gt;
+
+                    </code>
+                </pre>
+
+                <p>When the page is loaded, the browser generates the DOM tree, as shown below:</p>
+
+                <figure>
+                    <img src="img/dom.png" alt="Document Object Model">
+                    <figcaption>Image: Representation of the DOM tree.</figcaption>
+                </figure>
+                <br>
+               
+                <p>
+                    On the image we can see that the parent element of all other elements in 
+                    the DOM is the Document object. So we will always use this object to select elements
+                    on our page.
+                </p>
+
+                <p>
+                    With the DOM we'll be able to:
+                </p>
+
+                <ul>
+                    <li>Add, change and remove HTML elements</li>
+                    <li>Change attributes of HTML elements (like the 'class' or the 'src' of an image.)</li>
+                    <li>Change the CSS</li>
+                    <li>React upon page events (click, scroll, form input, hover, etc)</li>
+
+                </ul>
+
+                <p>
+                    In the next lesson we'll start interacting with the elements of our page.
+                </p>
+
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+           </main>
+
+        </div>
+        
+        <script src="js/scripts.js"></script>
+    
+    </body>
+
+</html>

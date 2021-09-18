@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="break-continue";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Break and Continue</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <header>
+                <div class="logo-area">
+                    <img src="img/logo_js.png" alt="logo javascript">
+                </div>
+                <div class="course-title">
+                    <h1>Javascript Course for Beginners</h1>
+                    <h2>Instructor: Ivan Lourenço Gomes</h2>
+                </div>
+            </header>
+
+            <main>
+                <h3>Break and Continue</h3>
+                
+                <p>
+                    The break and continue statements are used mainly with loops and their purpose
+                    is either to interrupt the loop or just jump the current iteration.
+                    
+                </p>
+
+                <h4>Break</h4>
+
+                <p>
+                    The break statement interrupts the loop execution or a <a target="_blank" href="https://www.w3schools.com/js/js_switch.asp">switch statement</a>:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    
+    var x = 0;
+    
+    while (x < 10) {
+        console.log(x);
+        x++;
+
+        if (x == 5) {
+            break;
+        }
+
+    }
+
+                    </code>
+                </pre>
+
+                <p>
+                    In the above example we interrupted the loop before its condition (x < 10) returned false.
+                    Neste exemplo, conseguimos interromper o loop antes de atingir a condição (x < 10). This is just a simple 
+                    example, but in some cases it could be very useful to interrupt a loop when something specific happens.
+                </p>
+
+                <h4>Continue</h4>
+
+                <p>
+                    The continue statement is used to jump the current iteration of a loop.
+                </p>
+
+                <p>
+                    Let's create a loop that will print only the even numbers from 0 to 20.
+                    First let's learn about the modulus operator  (%). 
+                </p>
+
+                <p>
+                    This operator return the remainder of a division, so for instance if we do 6 % 4 the result is 2, which is 
+                    the remainder of this division. 
+                </p>
+
+                <p>
+                    This means that we can use this operator to find out if a number is odd or even. The division 
+                    of any even number by 2 produces no remainder while the division of any odd number by 2 always produce 
+                    a remainder of 1. Therefore:
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    var num = 0;
+    
+    
+    num++;
+
+    while (num < 20) {
+        
+        if (num % 2 != 0) {
+            continue;
+        }
+
+        console.log(num);
+       
+    }
+    
+
+                    </code>
+                </pre>
+
+                
+                    
+
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="loop-while";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>While and Do/While Loops</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <header>
+                <div class="logo-area">
+                    <img src="img/logo_js.png" alt="logo javascript">
+                </div>
+                <div class="course-title">
+                    <h1>Javascript Course for Beginners</h1>
+                    <h2>Instructor: Ivan Lourenço Gomes</h2>
+                </div>
+            </header>
+
+            <main>
+                <h3>While and Do/While Loops</h3>
+                
+                <p>
+                    The While and Do/While Loops are similar to the for loops, but the way we write them is a bit different.
+                </p>
+
+                <h4>
+                    While loop
+                </h4>
+
+               <pre>
+                   <code class="javascript">
+    var count = 0;
+
+    while (count < 5) {
+        console.log(count);
+        count++;
+    }
+
+    /* The console will show:
+
+    0
+    1
+    2
+    3
+    4
+
+    */
+                   </code>
+               </pre>
+
+               <p>
+                   The logic is the same but just the condition is written inside parenthesis. The startinf variable (var count = 0)
+                   needs to be declared before writing the loop and the incremental operator should be written inside the loop.
+               </p>
+
+               <h4>
+                    Do/while loop
+                </h4>
+
+                <p>
+                    The do/while loop works the same way, the only difference is that the condition is written at the end of the loop.
+                    This means that this loop always runs at least once, before testing the condition.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+        var count = 10;
+    
+        do {
+            console.log(count);
+            count++;
+        } while (count < 5); // This loop requires the semicolon after the condition.
+    
+        // The console will show: 10
+    
+                    </code>
+                </pre>
+
+                <p>
+                    Note that the condition never returned true, but since the validation is only done at the end of the 
+                    first iteration, we were able to run the loop one time before testing the condition.
+                </p>
+
+               
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="aninhamento";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Nested loops and conditionals</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <header>
+                <div class="logo-area">
+                    <img src="img/logo_js.png" alt="logo javascript">
+                </div>
+                <div class="course-title">
+                    <h1>Javascript Course for Beginners</h1>
+                    <h2>Instructor: Ivan Lourenço Gomes</h2>
+                </div>
+            </header>
+
+            <main>
+                <h3>Nested loops and conditionals</h3>
+                
+                <p>
+                    When we use loops inside loops or conditionals inside conditionals,
+                    this is called nesting. Let's see a few examples below:
+                </p>
+
+                <h5>Nested conditionals</h5>
+
+                <p>
+                    Suppose our page receives two pieces of information about a person,
+                    her age and membership status (member / not a member). Then we need 
+                    to show the price of a product based on the following rules:
+
+                    <li>Members: Free</li>
+                    <li>Non-members under 18 years old: $ 6.00</li>
+                    <li>Non-members above 18 years old: $ 12.00</li>
+                    <li>All people above 65 years old: Free</li>
+
+                </p>
+
+                <p>
+                    We can start testing if age >= 65 or if the person is a member, in this case the product is free.
+                    If not, we then need to start another conditional because we still have two price possibilities.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    var isMember = false;
+    var age = 25;
+    
+    if (isMember == true || age >= 65) {
+        console.log('Free');
+    } else {
+
+        if (age < 18) {
+            console.log('$ 6.00');
+        } else {
+            console.log('$ 12.00');
+        }
+    }
+
+    // The console will show: $ 12.00'
+
+                    </code>
+                </pre>      
+                
+                <h5>Nested Loops</h5>
+
+                <p>
+                    When dealing with multidimensional arrays and objects, it is fairly common to use nested loops.
+                </p>
+
+                <p>
+                    Let's use an employees list as an example.</p>
+
+               
+
+
+                <pre>
+                    <code class="javascript">
+    var employees = [
+        
+        {
+            'name': 'Charles Silva',
+            'age': 45,
+            'children': ['Andrew Silva', 'Maria Silva']
+            
+        },
+
+        {
+            'name': 'Elizabeth Green',
+            'age': 32,
+            'children': ['Peter Green']
+            
+        },
+
+        {
+            'name': 'George Banks',
+            'age': 39,
+            'children': ['Philipp Banks', 'Rose Banks', 'Tara Banks']
+            
+        }
+    
+    ];
+
+                    </code>
+                </pre>  
+                
+                
+                <pre>
+                    <code class="html">
+    &lt;p&gt;
+        List of Employees' Children:
+        &lt;ul id="children"&gt;
+
+        &lt;/ul&gt;
+    &lt;/p&gt;
+                    </code>
+                </pre>
+
+                <p>Can you send the list of all employees' children to the list above?</p>
+
+                <pre>
+                    <code class="javascript">
+    document.getElementById("children").innerHTML = "";
+
+    for (var a = 0; a < employees.length; a++) {
+        var childrenList = employees[a].children;
+    
+        for (var b = 0; b < childrenList.length; b++) {
+            var child = childrenList[b];
+            document.getElementById("children").innerHTML += "<li>" + child + "</li>";
+        }
+    }
+                    </code>
+                </pre>
+
+                
+
+                <p>List of Employees' Children:</p>
+                <ul id="children">
+                    <li>Print the names inside these li's</li>
+                </ul>
+
+                <br>
+
+               
+                
+
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>

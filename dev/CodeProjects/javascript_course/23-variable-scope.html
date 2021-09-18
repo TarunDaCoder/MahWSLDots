@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="escopo";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Variable Scope</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <header>
+                <div class="logo-area">
+                    <img src="img/logo_js.png" alt="logo javascript">
+                </div>
+                <div class="course-title">
+                    <h1>Javascript Course for Beginners</h1>
+                    <h2>Instructor: Ivan Lourenço Gomes</h2>
+                </div>
+            </header>
+
+            <main>
+
+                <h3>Variable Scope</h3>
+
+                <p>
+                    Variable scope defines the accessibility of a variable from different parts of
+                    the code.
+                    There are two main scopes in Javascript: Global and Local.
+                </p>
+
+                <h4>Local scope</h4>
+
+                <p>
+                    Functions in Javascript have their own local scope. This means that variables
+                    created inside functions cannot be accessed from outside the function.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+                        
+    function create_name() {
+        var name = 'Mary';
+        console.log(name);
+    }
+
+    create_name(); // The console will show 'Mary'
+
+    console.log(name); // The console will show an error because 
+    // we don't have access so the name variable.
+
+                    </code>
+                </pre>
+                
+                
+
+                <h4>Global Scope</h4>
+
+                <p>
+                    Variables created outside functions belong to the global scope and 
+                    can be accessed from anywhere in the code, including from inside functions.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    
+    var name = 'Helen';
+                        
+    function show_name() {
+        console.log(name); 
+    }
+
+    show_name(); // The console will show 'Helen'
+
+                    </code>
+                </pre>
+
+                <p>
+                    Variables created without the <i>var</i> keyword also belong to the 
+                    global scope, even if they were created inside functions.
+                </p>
+
+                <p>
+                    This is something that should only be done intentionally as it can result in errors
+                    in your program that can be hard to spot.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+                        
+    function create_name() {
+        name = 'Mary';
+        console.log(name); 
+    }
+    create_name(); // The console will show 'Mary'
+    console.log(name); // The console will show 'Mary'
+
+                    </code>
+                </pre>
+
+
+                <h4>Local scope inside blocks (loops, conditionals, etc.)</h4>
+
+                <p>
+                    Before version ES6 (ECMAScript 2015), only functions had their own local scope.
+                    ES6 introduced a new keyword called <i>let</i> which creates a local scope inside these blocks. 
+                </p>
+
+                <pre>
+                    <code class="javascript">
+
+    var a = 0;
+
+    if (true) {
+        let a = 20;
+    }
+
+    console.log();
+
+    console.log(a); // This will return 0, because a was created as
+    // a loval cariable inside the block
+
+                    </code>
+                </pre>
+
+                <h5>
+                    An example with problems with variable scope on nested loops:
+                </h5>
+
+                <pre>
+                        <code class="javascript">
+        
+for (var a = 0; a < 3 ; a++) {
+    console.log('Parent loop count: ', a);
+
+    for (var a = 0; a < 3 ; a++) {
+        console.log('Child loop count: ', a);
+    }
+}
+    
+                        </code>
+                    </pre>
+                    
+                    <p>
+                        By running the above code we can see that the a variable used inside the child loop affected the variable 
+                        of the parent loop, because they have the same names and variable created inside loops are accessible from outside 
+                        of it.
+                    </p>
+
+                    <p>
+                        To solve this, we can use the let keyword.
+                    </p>
+
+                    <pre>
+                        <code class="javascript">
+        
+for (let a = 0; a < 3 ; a++) {
+    console.log('Parent loop count: ', a);
+
+    for (let a = 0; a < 3 ; a++) {
+        console.log('Child loop count: ', a);
+    }
+}
+    
+                        </code>
+                    </pre>
+
+                <p>
+                    Now the loops are working fine.
+                </p>
+
+                <p>
+                    <strong>ATTENTION: </strong> ES6 features are not compatible with some versions of Internet Explorer (IE), therefore
+                    this keyword should not be used in front end web development projects.
+                </p>
+
+                <p>
+                    To maintain full compatibility, it's recommended to change the names of variables when working with nested loops.
+                </p>
+                
+
+                <pre>
+                    <code class="javascript">
+    
+for (var a = 0; a < 3 ; a++) {
+    console.log('Parent loop count: ', a);
+
+    for (var b = 0; b < 3 ; b++) {
+        console.log('Child loop count: ', b);
+    }
+}
+
+                    </code>
+                </pre>
+
+                
+
+                <h5>The const keyword - for constants</h5>
+
+                <p>
+                    ES6 also introduced a new keyword called <i>const</i>. Like let, they also belong to the local 
+                    scope. The difference is that we can't change constants values.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    const PI = 3.14159;
+    PI = 0; // This will result in error because we can't change the constant's value.
+    // Why would we want to change PI's value anyway?
+
+                    </code>
+                </pre>
+
+                <p>
+                    By using constants when they are appropriate we add more security to our code, because when 
+                    there's an attempt to change them, an error raised will indicate something is wrong.
+                    But please note that constants will also break in some versions of IE.
+                </p>
+
+                  
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>
+

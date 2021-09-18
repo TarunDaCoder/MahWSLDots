@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <link rel="stylesheet" href="css/default.css">
+        <script src="tools/indice.js"></script>
+        <script>var current_class="condicionais";</script>
+        <script src="highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Conditionals</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <header>
+                <div class="logo-area">
+                    <img src="img/logo_js.png" alt="logo javascript">
+                </div>
+                <div class="course-title">
+                    <h1>Javascript Course for Beginners</h1>
+                    <h2>Instructor: Ivan Lourenço Gomes</h2>
+                </div>
+            </header>
+
+            <main>
+                <h3>Conditionals</h3>
+                
+                <p>
+                    Conditionals are used to determine if a block of code should or should not be executed 
+                    depending on a given set of conditions.
+                </p>
+
+                <h4>
+                    if / else if / else
+                </h4>
+
+                <p>
+                    Let's start with a simple example of checking the age of a person.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    var age = 17;
+
+    if (age < 18) {
+
+        console.log('Underage');
+
+    } else {
+
+        console.log('Overage');
+
+    }
+
+    // The console will show: 'Underage'
+                    </code>
+                </pre>
+
+              
+               <p>
+                   In this example we only have one condition and if it's not true we jump directly to the else statement.
+                   But we could have more conditions by using else if statements.
+               </p>
+
+               <pre>
+                   <code class="javascript">
+    var age = 70;
+
+    if (age < 18) {
+
+        console.log('Underage');
+
+    } else if (age >= 65) {
+
+        console.log('Senior');
+
+    } else {
+
+        console.log('Adult');
+
+    }
+
+    // The console will show: 'Senior'            
+                   </code>
+               </pre>
+
+                <p>
+                    No matter how many conditions we write, when one condition returns true, all the other conditions are
+                    ignored by Javascript. If none of the conditions return true, the code inside the else statement
+                    will be executed, although the else statement is not mandatory.
+                </p>
+
+                <h4>
+                    Testing multiple conditions at once with <i>and</i> / <i>or</i>
+                </h4>
+
+                <li><strong>&& (and): </strong> when we use <i>&&</i>, all conditions need to be true so the the code is executed</li>
+
+                <li><strong>|| (or): </strong> when we use <i>||</i>, we just need one condition to be true to execute the code</li>
+
+                <p>
+                    Let's analyze the grade and absences of a student and determine if he's been approved in the course.
+                    To be approved the student needs the grade to be 7 or higher and the number of absences to be 5 or lower.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    grade = 7;
+    absences = 3;
+
+    // Solving the problem with && (and): 
+
+    if (grade >= 7 && absences <= 5) {
+        console.log( 'The student has been approved' );
+    } else {
+        console.log( 'The student has failed' );
+    }
+
+    // Solving the problem with || (or):
+
+    if (grade < 7 || absences > 5) {
+        console.log( 'The student has failed' );
+    } else {
+        console.log( 'The student has been approved' );
+    }
+
+    // Both ways are correct
+    // change the values of the variables to test 
+
+
+                    </code>
+                </pre>
+
+
+                <h4>
+                    Evaluating values as conditions
+                </h4>
+
+                <p>
+                    In Javascript, just like Python, PHP etc., we can evaluate values as true or false without booleans. 
+                    Javascript considers to be false:
+                </p>
+
+                <li>false</li>
+                <li>undefined</li>
+                <li>null</li>
+                <li>0</li>
+                <li>NaN</li>
+                <li>"" (empty string)</li>
+
+                <p>All other values, numbers, strings, objects and arrays are considered to be true.</p>
+
+                <p>Therefore, it's common to use conditionals like this:</p>
+
+                <pre>
+                    <code class="javascript">
+    
+    var name = "";
+
+    if (name) {
+        
+        console.log("The name is " + name);
+    
+    } else {
+
+        console.log("The name has not been informed");
+
+    }
+
+    // The console will show "The name has not been informed"
+    // This method could be used to test if a form field is empty, for example
+                    </code>
+                </pre>              
+
+                
+                <h4>
+                    Ternary If
+                </h4>
+
+                <p>
+                    There's another way of writing conditionals using the ternary notation. 
+                </p>
+
+                <p>The syntax is: <strong> condition ? code to be executed if true : code to be executed if false;</strong></p>
+
+                <p>So rewriting the example above we have:</p>
+
+                <pre>
+                    <code class="javascript">
+    
+    var name = "";
+        
+    console.log( name ? "The name is " + name : "The name has not been informed" );
+
+    // As you can see, we can write less code to get to the same result.
+                    </code>
+                </pre>  
+
+                <h5>Using else if in ternary conditionals</h5>
+
+                <p>We can declare else if statements with the ternary notation by placing the next condition where the else would 
+                    be and then just continuing with the same structure.
+                </p>
+
+                <p>The syntax is: <strong> condition ? code to be executed if true : another condition ? code to be executed if true : code to be executed if false;</strong></p>
+                
+                <p>
+                    Let's rewrite the age example from above.
+                </p>
+
+                <pre>
+                    <code class="javascript">
+    
+    var age = 70;
+        
+    console.log( age < 18 ? 'Underage' : age >= 65 ? 'Senior' : 'Adult' );
+
+                    </code>
+                </pre>  
+
+                <p>This time the fewer lines of code we achieve comes with a trade-off: We are making the code readability worse.
+                    For this reason, ternary conditionals should be used only for simple if / else structures.
+                </p>
+
+                <div id="bottom-area">
+                    <div class="prev-next-link">
+                        <div class="link-aula" id="prev_class">
+                            
+                        </div>
+                        <div class="link-aula" id="next_class">
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="classes">
+                        <h3>
+                            Contents
+                        </h3>
+                        <ul id="class_index">
+                        </ul>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+
+        <script src="js/scripts.js"></script>
+
+    </body>
+
+</html>

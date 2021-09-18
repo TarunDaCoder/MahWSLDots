@@ -1,0 +1,102 @@
+.column, .columns {
+	padding-left: 10px;
+    padding-right: 10px;
+}
+
+.no-padding {
+   padding-right: 0;
+   padding-left: 0;
+}
+
+.table {
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+
+.table-cell {
+	display: table-cell;
+	vertical-align: middle;
+	height: 100%;
+	width: 100%;
+}
+
+.global-page-container {
+	width: 100%;
+	display: inline-block;
+    margin: auto;
+    height: 100%;
+}
+
+.inline {
+    display: inline-block !important;
+}
+
+
+
+
+/* **********************************************************************************************
+***********************************   MEDIA QUERIES   ******************************************* 
+********************************************************************************************** */
+
+
+
+
+// Small Screens ****************************************************************************
+/* max-width 640px *********************************************************************/
+
+@media only screen and (max-width: 40em) {
+   
+   .global-page-container {
+      width: 100%;
+   }
+   
+}   
+
+// End of small Screens
+
+
+
+// Medium Screens ***************************************************************************
+/* min-width 641px and max-width 1023px ************************************************/
+
+@media only screen and (min-width: 40.063em) and (max-width: 63.938em) {
+   
+   .global-page-container {
+      width: 100%;
+   }
+
+}
+
+// End of Medium Screens
+
+
+
+
+// Large Screens ****************************************************************************
+/* min-width 1024px and max-width 1440px ***********************************************/
+
+@media only screen and (min-width: 64em) and (max-width: 90em) { 
+   
+   .global-page-container {
+      width: 1024px;
+   }
+   
+}
+
+// End of Large Screens
+
+
+
+// Extra Large Screens **********************************************************************
+/* min-width 1441px ********************************************************************/
+
+@media only screen and (min-width: 90.063em) {
+   
+   .global-page-container {
+      width: 1320px;
+   }
+         
+}
+
+// End of Extra Large Screens
