@@ -7,10 +7,13 @@
 -- Enabled information fields, the data that will be printed
 -- Available (working) fields:
 --   * "" (empty string) -> newline
+--   * User (JohnDoe@myhost)
+--   * Separator
 --   * OS
 --   * Kernel
 --   * Uptime
 --   * Packages
+--   * WM
 --   * Resolution
 --   * Shell
 --   * Terminal
@@ -20,6 +23,8 @@
 --
 -- NOTE: fields are case-insensitive
 options.enabled_fields = {
+  "User",
+  "Separator",
   "OS",
   "Kernel",
   "Uptime",
@@ -44,7 +49,6 @@ options.kernel_message = "Kernel"
 options.uptime_message = "Uptime"
 options.packages_message = "Packages"
 options.resolution_message = "Resolution"
--- options.de_message = "DE"
 options.wm_message = "WM"
 options.shell_message = "Shell"
 options.terminal_message = "Terminal"
@@ -66,13 +70,44 @@ options.memory_message = "Memory"
 -- NOTE: by default is ":", change it to "" for disabling it
 options.delimiter = ":"
 
+-- The separator shown between your USERNAME@HOSTNAME message
+--
+-- NOTE: default is "-"
+options.separator = "-"
+
+-- The terminal colors icon, this option overrides colors_style
+-- in order to use your own icon for the color palette
+--
+-- NOTE: default is ""
+options.colors_icon = ""
+
 -- The terminal colors style
 -- Available styles:
 --   * classic
 --   * circles
+--   * ghosts (requires a patched font like nerd fonts)
 --
 -- NOTE: default is "classic"
 options.colors_style = "classic"
+
+-- Accent color for the fields
+-- Available colors:
+--   * black
+--   * red
+--   * green
+--   * yellow
+--   * blue
+--   * purple
+--   * cyan
+--   * white
+--
+-- NOTE: by default is the ASCII distro accent color. Colors are case-insensitive
+options.accent_color = ""
+
+-- Custom ASCII logo to be printed
+--
+-- NOTE: by default is an empty table (array)
+options.custom_ascii_logo = {}
 
 -- ASCII distro logo to be printed
 -- Available logos:
