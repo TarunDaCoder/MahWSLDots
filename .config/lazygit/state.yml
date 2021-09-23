@@ -2,8 +2,8 @@ lastupdatecheck: 0
 recentrepos:
 - /home/tarun/MahWSLDots
 - /home/tarun/MahPrivateDots
-- /home/tarun/lcfetch
 - /home/tarun/.config/nvim
+- /home/tarun/lcfetch
 - /home/tarun/dev/CodeProjects/WDB
 - /home/tarun/CodeProjects/Tech-House-Project
 startuppopupversion: 5
