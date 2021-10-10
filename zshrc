@@ -15,7 +15,6 @@ compinit
 source ~/zsh-plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/zsh-plugins/zsh-autopair/zsh-autopair.plugin.zsh
-bindkey -e will be emacs mode
 bindkey -v
 export KEYTIMEOUT=1
 
@@ -61,12 +60,17 @@ zstyle ':vcs_info:*' check-for-changes true
 # zstyle ':vcs_info:git:*' formats " %r/%S %b %m%u%c "
 zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}(%{$fg[red]%}%m%u%c%{$fg[yellow]%}%{$fg[magenta]%} %b%{$fg[blue]%})"
 # format our main prompt for hostname current folder, and permissions.
-PROMPT="%B%{$fg[blue]%}[%{$fg[white]%}%n%{$fg[red]%}@%{$fg[white]%}%m%{$fg[blue]%}] %(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$fg[cyan]%}%c%{$reset_color%}"
+
+# PROMPT="%B%{$fg[blue]%}[%{$fg[white]%}%n%{$fg[red]%}@%{$fg[white]%}%m%{$fg[blue]%}] %(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$fg[cyan]%}%c%{$reset_color%}"
 # PROMPT="%{$fg[green]%}%n@%m %~ %{$reset_color%}%#> "
-PROMPT+="\$vcs_info_msg_0_ "
+# PROMPT+="\$vcs_info_msg_0_ "
+
+# PS1='%{$fg[blue]%}%1~%{$fg[yellow]%}${vcs_info_msg_0_} %{$fg[green]%} %{$reset_color%}'
+
 # TODO look into this for more colors
 # https://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/
 # also ascii escape codes
+
 # Aliases
 alias nvimrc="nvim ~/.config/nvim/init.lua"
 alias zshrc="nvim ~/zshrc"
@@ -109,6 +113,10 @@ export TERMINAL=alacritty
 export DENO_INSTALL="/home/tarun/.deno"
 export PATH=$DENO_INSTALL/bin:$PATH
 export PATH=$HOME/dev/flutter/bin:$PATH
+export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
 # Enable neofetch on startup
 nf
+
+# starship prompt
+eval "$(starship init zsh)"
