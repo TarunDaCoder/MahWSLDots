@@ -6,7 +6,7 @@ These are my dotfiles. I am using [ManjaroWSL](https://github.com/yuk7/ManjaroWS
 
 # Screenshots
 
-![image](https://user-images.githubusercontent.com/77536695/134772432-2fb24f61-f020-496a-8de1-8e56cda50d78.png)
+![image](https://user-images.githubusercontent.com/77536695/136681757-654ea61c-e3f1-4558-85ab-b381908b6ecd.png)
 
 # Installing
 
@@ -21,7 +21,7 @@ These are my dotfiles. I am using [ManjaroWSL](https://github.com/yuk7/ManjaroWS
 ```shell
     git clone https://github.com/TarunDaCoder/MahWSLDots ~
 
-    #moving the bash config to your home directory
+    # moving the bash config to your home directory
     cd
     cd bash/
     mv .bashrc ~
